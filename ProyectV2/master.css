@@ -1,0 +1,47 @@
+.navbar{
+  border-radius: 0px;
+}
+.card-body{
+  background-color: rgb(191, 191, 191);
+}
+footer{
+  background-color: #3e4551;
+  margin-top: 100px;
+}
+
+#home{
+  background: url(85351.jpg)  no-repeat center center fixed;
+  display: table;
+  height: 500px;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+body{
+  background-color: #343a40;
+}
+#banner{
+  background: url(soccer.jpg)  no-repeat center center fixed;
+  display: table;
+  height: 500px;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+.landing-text{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.landing-text h1{
+  font-size: 500%;
+  font-weight: 700px;
+}
+.padding{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.card-text{
+  text-align: center;
+}
