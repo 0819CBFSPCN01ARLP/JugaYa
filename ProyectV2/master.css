@@ -4,6 +4,23 @@
 .navbar{
   border-radius: 0px;
 }
+
+nav li {
+  list-style:none;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+nav li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: #FF7A33;
+  text-decoration: none;
+}
+
 .card-body{
   background-color: rgb(191, 191, 191);
 }
