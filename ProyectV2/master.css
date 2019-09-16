@@ -42,10 +42,51 @@ height:200px;
   margin-top: 50px;
   margin-left: 50px;
   color: #333333;
-font-family: Georgia, Serif;
-  border: 1px solid  #76FA62;
+  font-family: Georgia, Serif;
+  font-size: 0.8em;
   padding:0;
-  height: 300px;
+  width: 15rem;
+  height:20rem;
+
+
+}
+.card-img-top{
+  width: 15rem;
+  height: 12rem;
+  border-right: 3px solid #0F152B;
+  border-top:  3px solid #0F152B;
+  border-left: 3px solid #0F152B;
+}
+.card-body
+{
+  padding:0;
+  width: 15rem;
+  height: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #76FA62;
+  border-right: 3px solid #0F152B;
+  border-bottom: 3px solid #0F152B;
+  border-left: 3px solid #0F152B;
+  color: #0F152B;
+  text-decoration: none;
+}
+.card-link
+{
+font-size: 1em;
+font-weight: 1000;
+height: 2rem;
+color: #0F152B;
+text-decoration: none;
+
+}
+.categorias{
+width: 1.5rem;
+height: 1.5rem;
+display: inline;
+}
+.contenedorCategorias{
+  text-align: center;
 }
 .fa-trophy{
   size: x7;
@@ -78,7 +119,7 @@ border-bottom: 1px solid #76FA62;
   background-size: cover;
 }
 body{
-  background-color: #343a40;
+  background-color: #0F152B;
 }
 #banner{
   background: url(soccer.jpg)  no-repeat center center fixed;
