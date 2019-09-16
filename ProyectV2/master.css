@@ -13,6 +13,7 @@ footer{
 }
 .principal{
   background-color:white ;
+
 }
 .noticia{
 height:200px;
@@ -22,19 +23,19 @@ height:200px;
 
 /*NAVEGADOR DE ARRIBA*/
 .navprincipal{
-  background-color: #76FA62;
+  background-color: #6DC560;
   border: 1px solid grey;
 }
 
 /*NAVEGADOR DEL COSTADO*/
 #list-example{
-  background-color:#76FA62  ;
+  background-color:#6DC560  ;
   border: 1px solid grey;
 }
 
 /*ELEMENTOS DEL NAVEGADOR LATERAL*/
 #linksnavlateral{
-  background-color: #76FA62 ;
+  background-color: #6DC560 ;
   border: none;
 }
 /*Pagina de Noticias */
@@ -64,7 +65,7 @@ height:200px;
   height: 6rem;
   margin-left: auto;
   margin-right: auto;
-  background-color: #76FA62;
+  background-color: #6DC560;
   border-right: 3px solid #0F152B;
   border-bottom: 3px solid #0F152B;
   border-left: 3px solid #0F152B;
@@ -94,10 +95,10 @@ display: inline;
 
 /* Pagina de perfil*/
 .containerEstadisticas{
-  border: 1px  solid #76FA62 ;
+  border: 1px  solid ##6DC560 ;
 }
 .estadisticasPerfil{
-border-bottom: 1px solid #76FA62;
+border-bottom: 1px solid ##6DC560;
 }
 .fotoPerfil{
   height: 15rem;
