@@ -41,10 +41,15 @@ height:200px;
 .cartas{
   margin-top: 50px;
   margin-left: 50px;
+  color: #333333;
+font-family: Georgia, Serif;
   border: 1px solid  #76FA62;
   padding:0;
+  height: 300px;
 }
-
+.fa-trophy{
+  size: x7;
+}
 
 /* Pagina de perfil*/
 .containerEstadisticas{
