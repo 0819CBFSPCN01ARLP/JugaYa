@@ -37,6 +37,15 @@ height:200px;
   background-color: #76FA62 ;
   border: none;
 }
+/*Pagina de Noticias */
+.cartas{
+  margin-top: 50px;
+  margin-left: 50px;
+  border: 1px solid  #76FA62;
+  padding:0;
+}
+
+
 /* Pagina de perfil*/
 .containerEstadisticas{
   border: 1px  solid #76FA62 ;
