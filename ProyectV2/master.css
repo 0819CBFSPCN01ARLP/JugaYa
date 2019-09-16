@@ -92,6 +92,33 @@ display: inline;
 .fa-trophy{
   size: x7;
 }
+/*Pagina de Amigos*/
+.item-amigo {
+  width:40rem;
+  height: 10rem;
+}
+.card-img{
+  height:10rem;
+
+}
+.card-body-amigo{
+  height:10rem;
+
+}
+.nombre-usuario-amigo{
+  margin-left: 1rem;
+
+}
+.nombre-apellido-amigo{
+  margin-left: 1rem;
+  font-size: 2rem;
+  font-weight: 1000;
+
+}
+.amigos-en-comun
+{
+  margin-left: 2rem;
+}
 
 /* Pagina de perfil*/
 .containerEstadisticas{
