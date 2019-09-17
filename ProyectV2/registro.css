@@ -96,7 +96,7 @@ body{
 @media (min-width:600px) {
   body{
   		color: #fff;
-  		background: url(Sports.png) no-repeat, url(running_register.png) no-repeat,#eee;
+  		background: url(img/Sports.png) no-repeat, url(img/running_register.png) no-repeat,#eee;
       background-position:
         bottom right,
         bottom left;

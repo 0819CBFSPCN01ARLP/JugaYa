@@ -157,7 +157,7 @@ border-bottom: 1px solid ##6DC560;
   margin-top:5px;
 }
 #home{
-  background: url(85351.jpg)  no-repeat center center fixed;
+  background: url(img/85351.jpg)  no-repeat center center fixed;
   display: table;
   height: 500px;
   position: relative;
@@ -168,7 +168,7 @@ body{
   background-color: #EEEEEE;
 }
 #banner{
-  background: url(soccer.jpg)  no-repeat center center fixed;
+  background: url(img/soccer.jpg)  no-repeat center center fixed;
   display: table;
   height: 500px;
   position: relative;
