@@ -21,10 +21,11 @@ function validacion(){
     if(!in_array($ext,$permitidos)){
       $errores[]="El formato de la foto no es valido";
     }
-    else {
-      $errores[]="Hubo un error en la subida de la foto"
-    }
   }
+  else {
+    $errores[]="Hubo un error en la subida de la foto"
+  }
+
   if(empty($errores)){
     $errores=agregarUsuarios($errores);
   }
@@ -44,6 +45,11 @@ function agregarUsuarios($errores){
     return $errores;
   }
 
+  $archivoNombre=$_FILES["foto_perfil"]["name"];
+  $ext=strtolower(pathinfo($archivoNombre,PATHINFO_EXTENSION));
+  $archivo=$_FILES['foto_perfil']['tmp_name'];
+  $foto='perfil'.$_POST['usuario'].".".$ext;
+  move_uploaded_file($archivo,'img'.$foto);
   $usuario=[
     'id'=> count($arregloUsuarios);
     'name'=>$_POST['nombre'],
@@ -51,7 +57,7 @@ function agregarUsuarios($errores){
     'usuario'=>$_POST['usuario'],
     'email'=>$_POST['email'],
     'password'=> password_hash($_POST["password"], PASSWORD_DEFAULT),
-    //falta agregar foto de perfil
+    'foto_perfil'=> $foto;
   ];
 
   $arregloUsuarios[]=$usuario;
