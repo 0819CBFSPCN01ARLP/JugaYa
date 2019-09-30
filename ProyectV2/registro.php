@@ -4,14 +4,20 @@ $nombre="";
 $apellido="";
 $usuario="";
 $email="";
+$errores=[];
 /* VALIDACION */
   if($_POST){
     $nombre=$_POST["nombre"];
     $apellido=$_POST["apellido"];
     $usuario=$_POST["usuario"];
     $email=$_POST["email"];
+    $password=password_hash($_POST["password"], PASSWORD_DEFAULT);
     $errores=validacion();
     if(empty($errores)){
+      if (!empty($_POST["guardar_clave"])){
+         setcookie("usuario", $usuario, time() + 365 * 24 * 60 * 60);
+         setcookie("password", $password, time() + 365 * 24 * 60 * 60);
+      }
       header('Location: noticiascartas.html');
     }
   }
@@ -115,16 +121,18 @@ $email="";
               Yoga
             </label>
         </div>
-        <input type="file" name="foto_perfil">
-
   		</div>
+      <input type="file" name="foto_perfil">
+      <label><input type="checkbox" id="cbox1" name="guardar_clave" value="1" > Recordar Usuario</label>
   		<div class="form-group">
         <button type="submit" class="btn btn-success btn-lg btn-block">Registrate</button>
       </div>
       <?php
+      if(!empty($errores)){
         foreach ($errores as $key) {
           echo "$key";
         }
+      }
        ?>
       </form>
   	  <div class="text-center">¿Ya tenes una cuenta? <a href="login.html">Inicia Sesion!</a></div>
