@@ -1,30 +1,20 @@
 <?php
+include_once('Includes/auth.php');
 $nombre="";
 $apellido="";
 $usuario="";
 $email="";
 /* VALIDACION */
-if ($_POST){
-$nombre=$_POST["nombre"];
-$apellido=$_POST["apellido"];
-$usuario=$_POST["usuario"];
-$email=$_POST["email"];
-  if(strlen($_POST["nombre"])==0){
-    echo "Debes rellenar el campo";
+  if($_POST){
+    $nombre=$_POST["nombre"];
+    $apellido=$_POST["apellido"];
+    $usuario=$_POST["usuario"];
+    $email=$_POST["email"];
+    $errores=validacion();
+    if(empty($errores)){
+      header('Location: noticiascartas.html');
+    }
   }
-  elseif(strlen($_POST["apellido"])==0){
-    echo "Debes rellenar el campo";
-  }
- elseif(strlen($_POST["usuario"])<=2){
-    echo "El usuario debe tener al menor 4 caracteres";
-  }
-
-  elseif(filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)==false){
-    echo "Debes ingresar un mail correcto";
-  }
-  else{header("Location:noticiascartas.html");exit;
-  }
-}
 
 /* REGISTRO  */
 
@@ -63,30 +53,30 @@ $email=$_POST["email"];
     <!-- FIN HEADER -->
 
     <div class="signup-form">
-      <form action="registro.php" method="post">
+      <form action="registro.php" method="post" enctype="multipart/form-data">
   		<h2>Registro</h2>
   		<p class="hint-text">Crea tu cuenta y forma parte de nuestra comunidad.</p>
       <div class="form-group">
   			<div class="row">
   				<div class="col-xs-6">
-            <input type="text" class="form-control" name="nombre" placeholder="Nombre" required="required" value="<?=$nombre?>">
+            <input type="text" class="form-control" name="nombre" placeholder="Nombre"  value="<?=$nombre?>">
           </div>
   				<div class="col-xs-6">
-            <input type="text" class="form-control" name="apellido" placeholder="Apellido" required="required">
+            <input type="text" class="form-control" name="apellido" placeholder="Apellido" value="<?=$apellido?>">
           </div>
   			</div>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="usuario" placeholder="Usuario" required="required">
+        <input type="text" class="form-control" name="usuario" placeholder="Usuario" value="<?=$usuario?>">
       </div>
       <div class="form-group">
-        <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        <input type="email" class="form-control" name="email" placeholder="Email" value="<?=$email?>">
       </div>
   		<div class="form-group">
-        <input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">
+        <input type="password" class="form-control" name="password" placeholder="Contraseña">
       </div>
   		<div class="form-group">
-        <input type="password" class="form-control" name="confirm_password" placeholder="Confirmar Contraseña" required="required">
+        <input type="password" class="form-control" name="confirm_password" placeholder="Confirmar Contraseña">
       </div>
       <div class="form-group">
         <div class="form-check">
@@ -125,12 +115,17 @@ $email=$_POST["email"];
               Yoga
             </label>
         </div>
+        <input type="file" name="foto_perfil">
+
   		</div>
   		<div class="form-group">
         <button type="submit" class="btn btn-success btn-lg btn-block">Registrate</button>
-
-
       </div>
+      <?php
+        foreach ($errores as $key) {
+          echo "$key";
+        }
+       ?>
       </form>
   	  <div class="text-center">¿Ya tenes una cuenta? <a href="login.html">Inicia Sesion!</a></div>
     </div>
