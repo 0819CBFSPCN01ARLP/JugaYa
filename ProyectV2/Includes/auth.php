@@ -66,18 +66,19 @@ function agregarUsuarios($errores){
   return $errores;
 }
 
-/* function verificaLogin($email,$password) {
+function verificaLogin() {
   if (isset($_POST)) {
     $path="db/usuarios.json";
     $usuariosJSON = json_decode($path,true);
 
-    foreach ($usuariosJSON as $email) {
-      if ($usuariosJSON["email"] == $email && $usuariosJSON["password"] == $password){
-        header('Location: noticiascartas.php');
-      } else {
-        $error = "Por favor verifique los datos ingresados";
-      }
-    }
+    foreach ($usuariosJSON as $usuario) {
+      if ($usuario["email"] == $_POST['email'] && password_verify(password_hash($usuario['password'], PASSWORD_DEFAULT),$_POST['password']){
+        include_once('bienvenida.php');
+      } 
+        else {
+          echo "Por favor verifique los datos ingresados";
+        }
+   }
   }
-} */
+} 
 ?>
