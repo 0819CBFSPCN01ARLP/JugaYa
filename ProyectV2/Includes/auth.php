@@ -48,7 +48,7 @@ function agregarUsuarios($errores){
   $archivoNombre=$_FILES["foto_perfil"]["name"];
   $ext=strtolower(pathinfo($archivoNombre,PATHINFO_EXTENSION));
   $archivo=$_FILES['foto_perfil']['tmp_name'];
-  $foto='perfil'.$_POST['usuario'].".".$ext;
+  $foto="perfil".$_POST['usuario'].".".$ext;
   move_uploaded_file($archivo,'img/'.$foto);
   $usuario=[
     'id'=> count($arregloUsuarios),
@@ -66,7 +66,7 @@ function agregarUsuarios($errores){
   return $errores;
 }
 
-function verificaLogin($email,$password) {
+/* function verificaLogin($email,$password) {
   if (isset($_POST)) {
     $path="db/usuarios.json";
     $usuariosJSON = json_decode($path,true);
@@ -79,5 +79,5 @@ function verificaLogin($email,$password) {
       }
     }
   }
-}
+} */
 ?>

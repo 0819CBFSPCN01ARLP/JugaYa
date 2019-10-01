@@ -127,7 +127,7 @@ $errores=[];
             </label>
         </div>
   		</div>
-      <input type="file" name="foto_perfil">
+      <input type="file" name="foto_perfil" value="">
       <label><input type="checkbox" id="cbox1" name="guardar_clave" value="1" > Recordar Usuario</label>
   		<div class="form-group">
         <button type="submit" class="btn btn-success btn-lg btn-block">Registrate</button>
