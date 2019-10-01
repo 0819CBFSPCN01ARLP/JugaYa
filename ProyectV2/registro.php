@@ -55,8 +55,8 @@ $errores=[];
         <div class="login-container">
           <ul>
             <li class="pr-2 pl-2"><a href="index.html" >Inicio</a></li>
-            <li class="pr-2 pl-2"><a href="login.html">Entrar</a></li>
-            <li class="pr-2 pl-2"><a href="registro.html" class="btn btn-success">Registrarme</a></li>
+            <li class="pr-2 pl-2"><a href="login.php">Entrar</a></li>
+            <li class="pr-2 pl-2"><a href="registro.php" class="btn btn-success">Registrarme</a></li>
           </ul>
         </div>
       </div>
@@ -140,7 +140,7 @@ $errores=[];
       }
        ?>
       </form>
-  	  <div class="text-center">¿Ya tenes una cuenta? <a href="login.html">Inicia Sesion!</a></div>
+  	  <div class="text-center">¿Ya tenes una cuenta? <a href="login.php">Inicia Sesion!</a></div>
     </div>
   </body>
 </html>

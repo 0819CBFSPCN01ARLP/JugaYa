@@ -29,7 +29,7 @@
       document.getElementById("countdown").textContent = timeleft;
       if(timeleft <=0 ){
           clearInterval(downloadTimer);
-          window.location = "noticiascartas.html";
+          window.location = "noticiascartas.php";
       }
       },1000);
     </script>
