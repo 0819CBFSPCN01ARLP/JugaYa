@@ -1,5 +1,4 @@
 <?php
-
 function validacion(){
   $errores=[];
 
@@ -15,10 +14,10 @@ function validacion(){
   if(filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)==false){
     $errores[]="El email no es valido";
   }
-  if($_FILES["foto_perfil"]["error"]!=0){ //Cambiar el nombre del archivo de ser necesario
+  if($_FILES["foto_perfil"]["error"]==0){ //Cambiar el nombre del archivo de ser necesario
     $permitidos=array('jpeg','png','jpg');
     $archivo=$_FILES["foto_perfil"]["name"];
-    $ext=pathinfo($archivo, PATHINFO_EXTENSION);
+    $ext=strtolower(pathinfo($archivo, PATHINFO_EXTENSION));
     if(!in_array($ext,$permitidos)){
       $errores[]="El formato de la foto no es valido";
     }
@@ -37,10 +36,10 @@ function agregarUsuarios($errores){
   $path="db/usuarios.json";
   $arregloUsuarios=[];
 
-  if(file_exists($path)){
+
     $usuarioJson=file_get_contents($path);
-    $arregloUsuarios=json_decode($usuariosJson,true);
-  }
+    $arregloUsuarios=json_decode($usuarioJson,true);
+
   if(array_search($_POST['email'],array_column($arregloUsuarios,'email'))!==false){
     $errores[]= "El usuario ya existe";
     return $errores;
