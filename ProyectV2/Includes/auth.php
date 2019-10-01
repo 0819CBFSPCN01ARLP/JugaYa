@@ -73,6 +73,8 @@ function verificaLogin() {
 
     foreach ($usuariosJSON as $usuario) {
       if ($usuario["email"] == $_POST['email'] && password_verify(password_hash($usuario['password'], PASSWORD_DEFAULT),$_POST['password']){
+        $_SESSION['usuario']=$usuario['usuario'];
+        $_SESSION['nombre']=$usuario['nombre'];
         include_once('bienvenida.php');
       } 
         else {
