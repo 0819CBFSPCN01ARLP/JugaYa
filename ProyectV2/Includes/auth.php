@@ -23,7 +23,7 @@ function validacion(){
     }
   }
   else {
-    $errores[]="Hubo un error en la subida de la foto"
+    $errores[]="Hubo un error en la subida de la foto";
   }
 
   if(empty($errores)){
@@ -51,18 +51,30 @@ function agregarUsuarios($errores){
   $foto='perfil'.$_POST['usuario'].".".$ext;
   move_uploaded_file($archivo,'img'.$foto);
   $usuario=[
-    'id'=> count($arregloUsuarios);
+    'id'=> count($arregloUsuarios),
     'name'=>$_POST['nombre'],
     'apellido'=>$_POST['apellido'],
     'usuario'=>$_POST['usuario'],
     'email'=>$_POST['email'],
     'password'=> password_hash($_POST["password"], PASSWORD_DEFAULT),
-    'foto_perfil'=> $foto;
+    'foto_perfil'=> $foto
   ];
 
   $arregloUsuarios[]=$usuario;
   $usuariosJSON=json_encode($arregloUsuarios,JSON_PRETTY_PRINT); //Sacar el pretty print despues de haber hecho la prueba;
   file_put_contents($path,$usuariosJSON);
   return $errores;
+}
+
+function verificaLogin() {
+  $path="db/usuarios.json";
+  $usuariosJSON = json_decode($path,true);
+
+  $_SESSION["email"] = $_POST["email"];
+  $_SESSION["password"] = password_hash($_POST["password"],PASSWORD_DEFAULT);
+
+  foreach ($usuariosJSON as $key) {
+    $usuariosJSON[]
+  }
 }
 ?>
