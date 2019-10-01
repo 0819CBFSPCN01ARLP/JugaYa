@@ -1,10 +1,16 @@
 <?php
+
+/* INICIO SESION */
+session_start();
+
 include_once('Includes/auth.php');
+
 $nombre="";
 $apellido="";
 $usuario="";
 $email="";
 $errores=[];
+
 /* VALIDACION */
   if($_POST){
     $nombre=$_POST["nombre"];
@@ -21,10 +27,6 @@ $errores=[];
       header('Location: noticiascartas.html');
     }
   }
-
-/* REGISTRO  */
-
-/* REDIRECCIONO */
 
 ?>
 <!DOCTYPE html>
