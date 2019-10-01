@@ -4,13 +4,9 @@ session_start();
 
 include_once('Includes/auth.php');
 
-/* if (!isset($_POST)) {
-
-  $email = $_POST["email"];
-  $password = password_hash($_POST["password"],PASSWORD_DEFAULT);
-
-  verificaLogin($email,$password);
-} */
+if (isset($_POST)) {
+  verificaLogin();
+}
 
  ?>
 <!DOCTYPE html>
