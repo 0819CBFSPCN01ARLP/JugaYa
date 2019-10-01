@@ -1,17 +1,13 @@
 <?php
-
-/* INICIO SESION */
-session_start();
-
 include_once('Includes/auth.php');
-
 $nombre="";
 $apellido="";
 $usuario="";
 $email="";
 $errores=[];
-
 /* VALIDACION */
+  /*Si el usuario esta logueado redirigir a noticiasCartas.php*/
+  include_once('Logueado.php');
   if($_POST){
     $nombre=$_POST["nombre"];
     $apellido=$_POST["apellido"];
@@ -24,9 +20,16 @@ $errores=[];
          setcookie("usuario", $usuario, time() + 365 * 24 * 60 * 60);
          setcookie("password", $password, time() + 365 * 24 * 60 * 60);
       }
-      header('Location: noticiascartas.html');
+      session_start();
+      $_SESSION['usuario']=$usuario;
+      $_SESSION['nombre']=$nombre;
+      header('Location: noticiascartas.php');
     }
   }
+
+/* REGISTRO  */
+
+/* REDIRECCIONO */
 
 ?>
 <!DOCTYPE html>
