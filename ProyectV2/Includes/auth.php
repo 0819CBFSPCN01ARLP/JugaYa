@@ -49,7 +49,7 @@ function agregarUsuarios($errores){
   $ext=strtolower(pathinfo($archivoNombre,PATHINFO_EXTENSION));
   $archivo=$_FILES['foto_perfil']['tmp_name'];
   $foto='perfil'.$_POST['usuario'].".".$ext;
-  move_uploaded_file($archivo,'img'.$foto);
+  move_uploaded_file($archivo,'img/'.$foto);
   $usuario=[
     'id'=> count($arregloUsuarios),
     'name'=>$_POST['nombre'],
@@ -66,15 +66,18 @@ function agregarUsuarios($errores){
   return $errores;
 }
 
-function verificaLogin() {
-  $path="db/usuarios.json";
-  $usuariosJSON = json_decode($path,true);
+function verificaLogin($email,$password) {
+  if (isset($_POST)) {
+    $path="db/usuarios.json";
+    $usuariosJSON = json_decode($path,true);
 
-  $_SESSION["email"] = $_POST["email"];
-  $_SESSION["password"] = password_hash($_POST["password"],PASSWORD_DEFAULT);
-
-  foreach ($usuariosJSON as $key) {
-    $usuariosJSON[]
+    foreach ($usuariosJSON as $email) {
+      if ($usuariosJSON["email"] == $email && $usuariosJSON["password"] == $password){
+        header('Location: noticiascartas.php');
+      } else {
+        $error = "Por favor verifique los datos ingresados";
+      }
+    }
   }
 }
 ?>
