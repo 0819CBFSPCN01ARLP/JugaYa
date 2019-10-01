@@ -21,7 +21,8 @@
         <a class="navbar-brand" href="#"><img src="img/logov2.png" width="100" height="60" class="d-inline-block align-top" alt="logov2"></a>
         <div class="login-container">
           <ul>
-            <li class="pr-2 pl-2"><a href="noticiascartas.html" class="btn btn-success" >Inicio</a></li>
+            <li class="pr-2 pl-2"><a href="noticiascartas.php" class="btn btn-success" >Inicio</a></li>
+            <li class="pr-2 pl-2"><a href="logout.php" class="btn btn-success">Salir</a></li>
           </ul>
         </div>
       </div>
