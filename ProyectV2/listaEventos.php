@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="master.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="listaEventos.css">
   </head>
   <body>
 
@@ -31,8 +31,9 @@
 
 <div class="padding principal">
  <div class="container">
-  <div class="d-flex flex-row">
-     <div id="list-example" class="list-group col-sm-2">
+ <div class="d-flex flex-row">
+     <!--BARRA NAVEGACION DEL COSTADO -->
+     <div id="list-example" class="list-group col-2">
      <a class="list-group-item list-group-item-action" id="linksnavlateral" href="#list-item-1"><i class="fas fa-futbol"></i>Mis proximos eventos</a>
      <br>
      <a class="list-group-item list-group-item-action" id="linksnavlateral" href="#list-item-2"><b>Mis equipos</b></a>
@@ -46,104 +47,90 @@
      <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-3"><i class="fas fa-futbol"></i> Eventos cercanos</a>
      <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-4"><i class="fas fa-user-friends"></i>Jugadores cercanos</a>
      <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-3"><i class="fas fa-running"></i>Deportes</a>
-
      </div>
-
-<div class="container principal d-flex flex-row col-md-10">
-  <div class= "d-flex flex-column">
-    <div class="card mb-3">
-       <div class="row no-gutters item-amigo">
-        <div class="col-md-4">
-         <img src="img/cancha1.jpg" class="card-img " alt="...">
-        </div>
-         <div class="card-body-amigo">
-         <h5 class="card-title nombre-apellido-amigo">Quedan 4 lugares</h5>
-         <p class="nombre-usuario-amigo"> <a href="#">Complejo Las Palmas</a></p>
-         <p class=""><small class="text-muted amigos-en-comun">Unirse al evento</small></p>
-         </div>
-        </div>
-       </div>
-       <div class="card mb-3">
-          <div class="row no-gutters item-amigo">
-           <div class="col-md-4">
-            <img src="img/cancha2.jpg" class="card-img " alt="...">
-           </div>
-            <div class="card-body-amigo">
-            <h5 class="card-title nombre-apellido-amigo">Quedan 6 lugares</h5>
-            <p class="nombre-usuario-amigo"> <a href="#">Complejo El desafio</a></p>
-            <p class=""><small class="text-muted amigos-en-comun">Unirse al evento</small></p>
-            </div>
-           </div>
+     <!-- CONTAINER PARA LA LISTA -->
+     <div class="container d-flex flex-column col-10">
+        <!--PRIMER ELEMENTO DE LA LISTA -->
+        <h2>Te ofrecemos los siguientes eventos antes de crear el tuyo:</h2>
+        <div class="container d-flex flex-row" style="margin-bottom:15px;">
+          <div class="d-flex flex-column col-4">
+          <img src="img/cancha2.jpg" alt="" style="height:200px">
           </div>
-          <div class="card mb-3">
-             <div class="row no-gutters item-amigo">
-              <div class="col-md-4">
-               <img src="img/cancha 3.jpg" class="card-img " alt="...">
-              </div>
-               <div class="card-body-amigo">
-               <h5 class="card-title nombre-apellido-amigo">Quedan 8 lugares</h5>
-               <p class="nombre-usuario-amigo"> <a href="#">Complejo El diego</a></p>
-               <p class=""><small class="text-muted amigos-en-comun">Unirse al evento</small></p>
-               </div>
-              </div>
-             </div>
-             <div class="card mb-3">
-                <div class="row no-gutters item-amigo">
-                 <div class="col-md-4">
-                  <img src="img/messi.jpg" class="card-img " alt="...">
-                 </div>
-                  <div class="card-body-amigo">
-                  <h5 class="card-title nombre-apellido-amigo">Lionel Messi</h5>
-                  <p class="nombre-usuario-amigo"> <a href="#">lionelmessi</a></p>
-                  <p class=""><small class="text-muted amigos-en-comun">3 amigos en comun</small></p>
-                  </div>
-                 </div>
-                </div>
-                <div class="card mb-3">
-                   <div class="row no-gutters item-amigo">
-                    <div class="col-md-4">
-                     <img src="img/messi.jpg" class="card-img " alt="...">
-                    </div>
-                     <div class="card-body-amigo">
-                     <h5 class="card-title nombre-apellido-amigo">Lionel Messi</h5>
-                     <p class="nombre-usuario-amigo"> <a href="#">lionelmessi</a></p>
-                     <p class=""><small class="text-muted amigos-en-comun">3 amigos en comun</small></p>
-                     </div>
-                    </div>
-                   </div>
-                   <div class="card mb-3">
-                      <div class="row no-gutters item-amigo">
-                       <div class="col-md-4">
-                        <img src="img/messi.jpg" class="card-img " alt="...">
-                       </div>
-                        <div class="card-body-amigo">
-                        <h5 class="card-title nombre-apellido-amigo">Lionel Messi</h5>
-                        <p class="nombre-usuario-amigo"> <a href="#">lionelmessi</a></p>
-                        <p class=""><small class="text-muted amigos-en-comun">3 amigos en comun</small></p>
-                        </div>
-                       </div>
-                      </div>
-                      <div class="card mb-3">
-                         <div class="row no-gutters item-amigo">
-                          <div class="col-md-4">
-                           <img src="img/messi.jpg" class="card-img " alt="...">
-                          </div>
-                           <div class="card-body-amigo">
-                           <h5 class="card-title nombre-apellido-amigo">Lionel Messi</h5>
-                           <p class="nombre-usuario-amigo"> <a href="#">lionelmessi</a></p>
-                           <p class=""><small class="text-muted amigos-en-comun">3 amigos en comun</small></p>
-                           </div>
-                          </div>
-                         </div>
+          <div class="d-flex flex-column col-3">
+            <h5 class="card-title nombre-apellido-amigo">4 lugares libres</h5>
+              <p class="nombre-usuario-amigo"> <a href="#">Complejo El Galpon</a></p>
+              <p class=""><small class="text-muted amigos-en-comun"><a href="#"><i class="fas fa-location-arrow"></i>1.6km de distancia</a></p></small></p>
+          </div>
+          <div class="d-flex flex-column col-3">
+          <p class="nombre-usuario-amigo"> $140 por persona</p>
+          <a href="#" class="btn btn-primary">Unite!</a>
+          </div>
+        </div>
+        <!-- TERMINA EL PRIMER ELEMENTO DE LA LISTA -->
+        <div class="container d-flex flex-row" style="margin-bottom:15px;">
+          <div class="d-flex flex-column col-4">
+          <img src="img/cancha1.jpg" alt="" style="height:200px">
+          </div>
+          <div class="d-flex flex-column col-3">
+            <h5 class="card-title nombre-apellido-amigo">6 lugares libres</h5>
+              <p class="nombre-usuario-amigo"> <a href="#">Complejo El Desafio</a></p>
+              <p class=""><small class="text-muted amigos-en-comun"><a href="#"><i class="fas fa-location-arrow"></i>2.4km de distancia</a></p></small></p>
+          </div>
+          <div class="d-flex flex-column col-3">
+          <p class="nombre-usuario-amigo"> $130 por persona</p>
+          <a href="#" class="btn btn-primary">Unite!</a>
+          </div>
+        </div>
+        <div class="container d-flex flex-row" style="margin-bottom:15px;">
+          <div class="d-flex flex-column col-4">
+          <img src="img/cancha 3.jpg" alt="" style="height:200px">
+          </div>
+          <div class="d-flex flex-column col-3">
+            <h5 class="card-title nombre-apellido-amigo">8 lugares libres</h5>
+              <p class="nombre-usuario-amigo"> <a href="#">Complejo El Diego</a></p>
+              <p class=""><small class="text-muted amigos-en-comun"><a href="#"><i class="fas fa-location-arrow"></i>550 mts de distancia</a></p></small></p>
+          </div>
+          <div class="d-flex flex-column col-3">
+          <p class="nombre-usuario-amigo"> $150 por persona</p>
+          <a href="#" class="btn btn-primary">Unite!</a>
+          </div>
+        </div>
+    <h2>Complejos disponibles para tu evento: </h2> 
+     <div class="container d-flex flex-row" style="margin-bottom:15px;">
+       <div class="d-flex flex-column col-4">
+       <img src="img/cancha1.jpg" alt="" style="height:200px">
+       </div>
+       <div class="d-flex flex-column col-3">
+           <h3 class="nombre-usuario-amigo"> <a href="#">El Desafio</a></h3>
+           <p class=""><small class="text-muted amigos-en-comun"><a href="#"><i class="fas fa-location-arrow"></i>2.4km de distancia</a></p></small></p>
+       </div>
+       <div class="d-flex flex-column col-3">
+       <p class="nombre-usuario-amigo"> $130 por persona</p>
+       <a href="#" class="btn btn-primary">Reserva!</a>
+       </div>
+     </div>
+     <div class="container d-flex flex-row" style="margin-bottom:15px;">
+       <div class="d-flex flex-column col-4">
+       <img src="img/cancha1.jpg" alt="" style="height:200px">
+       </div>
+       <div class="d-flex flex-column col-3">
 
-      </div>
+           <h3 class="nombre-usuario-amigo"> <a href="#">El Desafio</a></h3>
+           <p class=""><small class="text-muted amigos-en-comun"><a href="#"><i class="fas fa-location-arrow"></i>2.4km de distancia</a></p></small></p>
+       </div>
+       <div class="d-flex flex-column col-3">
+       <p class="nombre-usuario-amigo"> $130 por persona</p>
+       <a href="#" class="btn btn-primary">Unite!</a>
+       </div>
+     </div>
     </div>
+
 </div>
 </div>
 </div>
-<footer class="page-footer font-small pt-4">
+  <footer class="page-footer font-small pt-4">
 <!-- Footer Links -->
-<div class="container text-center text-md-left">
+  <div class="container text-center text-md-left">
   <!-- Grid row -->
   <div class="row">
     <!-- Grid column -->
