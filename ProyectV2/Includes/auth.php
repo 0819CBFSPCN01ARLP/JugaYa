@@ -34,16 +34,21 @@ function validacion(){
 
 function agregarUsuarios($errores){
   $path="db/usuarios.json";
-  $arregloUsuarios=[];
-
-
+  if(!file_exists($path))
+  {
+    $arregloUsuarios=[];
+  }
     $usuarioJson=file_get_contents($path);
     $arregloUsuarios=json_decode($usuarioJson,true);
-
+if(!empty($arregloUsuarios)){
   if(array_search($_POST['email'],array_column($arregloUsuarios,'email'))!==false){
-    $errores[]= "El usuario ya existe";
-    return $errores;
+    $errores[]= "El mail ya esta registrado <br>";
+    if(array_search($_POST['usuario'],array_column($arregloUsuarios,'usuario'))!==false){
+      $errores[]= "El usuario ya esta registrado <br>";
+      return $errores;
+   }
   }
+}
 
   $archivoNombre=$_FILES["foto_perfil"]["name"];
   $ext=strtolower(pathinfo($archivoNombre,PATHINFO_EXTENSION));
@@ -61,26 +66,28 @@ function agregarUsuarios($errores){
   ];
 
   $arregloUsuarios[]=$usuario;
-  $usuariosJSON=json_encode($arregloUsuarios,JSON_PRETTY_PRINT); //Sacar el pretty print despues de haber hecho la prueba;
-  file_put_contents($path,$usuariosJSON);
+  $usuarioJSON=json_encode($arregloUsuarios,JSON_PRETTY_PRINT); //Sacar el pretty print despues de haber hecho la prueba;
+  file_put_contents($path,$usuarioJSON);
   return $errores;
+
 }
-
 function verificaLogin() {
-  if (isset($_POST)) {
-    $path="db/usuarios.json";
-    $usuariosJSON = json_decode($path,true);
 
-    foreach ($usuariosJSON as $usuario) {
-      if ($usuario["email"] == $_POST['email'] && password_verify(password_hash($usuario['password'], PASSWORD_DEFAULT),$_POST['password'])){
+    $path="db/usuarios.json";
+    $usuarioJson=file_get_contents($path);
+    $usuarioJSON = json_decode($usuarioJson,true);
+
+    foreach ($usuarioJSON as $usuario)
+    {
+      if ($usuario["email"] == $_POST['email'] && password_verify($_POST["password"], $usuario["password"])){
         $_SESSION['usuario']=$usuario['usuario'];
-        $_SESSION['nombre']=$usuario['nombre'];
+        $_SESSION['nombre']=$usuario['name'];
+
         include_once('bienvenida.php');
       }
-        else {
-          echo "Por favor verifique los datos ingresados";
-        }
+
    }
-  }
+
 }
+
 ?>

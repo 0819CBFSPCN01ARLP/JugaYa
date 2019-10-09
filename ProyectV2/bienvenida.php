@@ -19,11 +19,11 @@
   <body>
     <div class="jumbotron banner text-center">
       <h1>Bienvenido!</h1>
-      <p>Sera redirigido en <span id="countdown">5</span></p>
+      <p>Sera redirigido en <span id="countdown">3</span></p>
     </div>
 
     <script type="text/javascript">
-      var timeleft = 5;
+      var timeleft = 3;
       var downloadTimer = setInterval(function(){
       timeleft--;
       document.getElementById("countdown").textContent = timeleft;

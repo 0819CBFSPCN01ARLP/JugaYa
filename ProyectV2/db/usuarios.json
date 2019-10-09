@@ -1,0 +1,65 @@
+[
+    {
+        "id": 0,
+        "name": "bruno",
+        "apellido": "malpeli",
+        "usuario": "bruno",
+        "email": "bruno.malpeli@hotmail.com",
+        "password": "$2y$10$QPU9b5uRBFYdUMIB5PBAUOaP4rEhhB3qq7PoVF6nrPZd9RjQy3276",
+        "foto_perfil": "perfilbruno.jpg"
+    },
+    {
+        "id": 1,
+        "name": "bruno",
+        "apellido": "malpeli",
+        "usuario": "bruno1",
+        "email": "brunomalpeli@hotmail.com",
+        "password": "$2y$10$tKQMYbje\/dMt.2L9zpmDI.5JK88Gqepzk3ehQFw6FJWGobWYvAcpO",
+        "foto_perfil": "perfilbruno1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Martin",
+        "apellido": "Hola",
+        "usuario": "Hola",
+        "email": "hola@gmail.com",
+        "password": "$2y$10$HuWWPQwkU5inUxRbwC69R.O89AAB0AkBOsgFJxu5yiq6ZiImHYrga",
+        "foto_perfil": "perfilHola.jpg"
+    },
+    {
+        "id": 3,
+        "name": "bruno",
+        "apellido": "bruno",
+        "usuario": "bruno1",
+        "email": "bruno.mali@hotmail.com",
+        "password": "$2y$10$XsLAC77aZHnkYt5GBdd40e0cJj0tO5K3fnF3xMRmyIr7w\/U1t7tmO",
+        "foto_perfil": "perfilbruno1.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Bruno",
+        "apellido": "Malpeli",
+        "usuario": "bruno123",
+        "email": "brunomalpeli123@hotmail.com",
+        "password": "$2y$10$4Z24ddG.KvzoKRyhQpFoYOZT6YlzNXhruZplE9nRwXlSalHb\/Jf32",
+        "foto_perfil": "perfilbruno123.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Martin",
+        "apellido": "Hola",
+        "usuario": "martin123",
+        "email": "martin@hotmail.com",
+        "password": "$2y$10$TbI9VwLmmu7QlUObgAZJieitWiQsNpnd5b1etkFxahmOPkxnq69h2",
+        "foto_perfil": "perfilmartin123.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Juan",
+        "apellido": "Gomez",
+        "usuario": "juangomez",
+        "email": "juan@hotmail.com",
+        "password": "$2y$10$YzO88L7DPoXxdfnrU4vEMuKaruqjXom7U.b4bRAFlGTgEtJJgnY.u",
+        "foto_perfil": "perfiljuangomez.jpg"
+    }
+]

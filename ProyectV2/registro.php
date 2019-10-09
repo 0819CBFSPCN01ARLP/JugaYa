@@ -20,7 +20,7 @@ $errores=[];
          setcookie("usuario", $usuario, time() + 365 * 24 * 60 * 60);
          setcookie("password", $password, time() + 365 * 24 * 60 * 60);
       }
-      session_start();
+    /*  session_start();*/
       $_SESSION['usuario']=$usuario;
       $_SESSION['nombre']=$nombre;
       include_once('bienvenida.php');

@@ -4,7 +4,7 @@ session_start();
 
 include_once('Includes/auth.php');
 
-if (isset($_POST)) {
+if (isset($_POST['email'])) {
   verificaLogin();
 }
 
@@ -39,7 +39,7 @@ if (isset($_POST)) {
     </nav>
     <!-- FIN HEADER -->
     <div class="signup-form">
-      <form action="#" method="post">
+      <form action="login.php" method="post">
     		<h2>Login</h2>
         <div class="form-group">
           <input type="email" class="form-control" name="email" placeholder="Email" required="required">
