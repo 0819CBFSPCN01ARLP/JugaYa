@@ -54,7 +54,7 @@ $errores=[];
         <a class="navbar-brand" href="#"><img src="img/logov2.png" width="100" height="60" class="d-inline-block align-top" alt="logov2"></a>
         <div class="login-container">
           <ul>
-            <li class="pr-2 pl-2"><a href="index.html" >Inicio</a></li>
+            <li class="pr-2 pl-2"><a href="index.php" >Inicio</a></li>
             <li class="pr-2 pl-2"><a href="login.php">Entrar</a></li>
             <li class="pr-2 pl-2"><a href="registro.php" class="btn btn-success">Registrarme</a></li>
           </ul>
