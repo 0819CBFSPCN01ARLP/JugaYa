@@ -1,6 +1,9 @@
+<?php
+ ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
+
     <meta charset="utf-8">
     <title>Perfil</title>
     <!-- Latest compiled and minified CSS -->
@@ -12,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="master.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="listaEventos.css">
+
   </head>
   <body>
 
@@ -49,10 +52,11 @@
      <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-3"><i class="fas fa-running"></i>Deportes</a>
      </div>
      <!-- CONTAINER PARA LA LISTA -->
+
      <div class="container d-flex flex-column col-10">
         <!--PRIMER ELEMENTO DE LA LISTA -->
-        <h2>Te ofrecemos los siguientes eventos antes de crear el tuyo:</h2>
-        <div class="container d-flex flex-row" style="margin-bottom:15px;">
+
+        <div class="d-flex flex-row listaEvento">
           <div class="d-flex flex-column col-4">
           <img src="img/cancha2.jpg" alt="" style="height:200px">
           </div>
@@ -62,12 +66,12 @@
               <p class=""><small class="text-muted amigos-en-comun"><a href="#"><i class="fas fa-location-arrow"></i>1.6km de distancia</a></p></small></p>
           </div>
           <div class="d-flex flex-column col-3">
-          <p class="nombre-usuario-amigo"> $140 por persona</p>
+          <p class="nombre-usuario-amigo" $140 por persona</p>
           <a href="#" class="btn btn-primary">Unite!</a>
-          </div>
+        </div>
         </div>
         <!-- TERMINA EL PRIMER ELEMENTO DE LA LISTA -->
-        <div class="container d-flex flex-row" style="margin-bottom:15px;">
+        <div class="d-flex flex-row listaEvento">
           <div class="d-flex flex-column col-4">
           <img src="img/cancha1.jpg" alt="" style="height:200px">
           </div>
@@ -81,7 +85,7 @@
           <a href="#" class="btn btn-primary">Unite!</a>
           </div>
         </div>
-        <div class="container d-flex flex-row" style="margin-bottom:15px;">
+        <div class="d-flex flex-row listaEvento">
           <div class="d-flex flex-column col-4">
           <img src="img/cancha 3.jpg" alt="" style="height:200px">
           </div>
@@ -95,8 +99,8 @@
           <a href="#" class="btn btn-primary">Unite!</a>
           </div>
         </div>
-    <h2>Complejos disponibles para tu evento: </h2> 
-     <div class="container d-flex flex-row" style="margin-bottom:15px;">
+    <h2>Complejos disponibles para tu evento: </h2>
+     <div class="d-flex flex-row listaEvento">
        <div class="d-flex flex-column col-4">
        <img src="img/cancha1.jpg" alt="" style="height:200px">
        </div>
@@ -109,7 +113,7 @@
        <a href="#" class="btn btn-primary">Reserva!</a>
        </div>
      </div>
-     <div class="container d-flex flex-row" style="margin-bottom:15px;">
+     <div class="d-flex flex-row listaEvento">
        <div class="d-flex flex-column col-4">
        <img src="img/cancha1.jpg" alt="" style="height:200px">
        </div>
@@ -237,6 +241,9 @@
 <!-- Copyright -->
 </footer>
 <!-- Footer -->
-
+<div>Icons made by <a href="https://www.flaticon.com/authors/ddara" title="dDara">dDara</a> from <a href="https://www.flaticon.com/"         title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
   </body>
 </html>
+<?php
+ ?>
