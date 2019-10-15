@@ -71,23 +71,49 @@ if(!empty($arregloUsuarios)){
   return $errores;
 
 }
-function verificaLogin() {
+function verificaLogin($errores) {
 
     $path="db/usuarios.json";
     $usuarioJson=file_get_contents($path);
     $usuarioJSON = json_decode($usuarioJson,true);
+    $encontreUsuario=false;
+    $encontrePassword=false;
 
     foreach ($usuarioJSON as $usuario)
     {
-      if ($usuario["email"] == $_POST['email'] && password_verify($_POST["password"], $usuario["password"])){
-        $_SESSION['usuario']=$usuario['usuario'];
-        $_SESSION['nombre']=$usuario['name'];
-
-        include_once('bienvenida.php');
+      if ($usuario["email"] == $_POST['email']){
+        $encontreUsuario=true;
+        if(password_verify($_POST["password"], $usuario["password"])){
+          $_SESSION['usuario']=$usuario['usuario'];
+          $_SESSION['nombre']=$usuario['name'];
+          $_SESSION['previoLogueo']=false;
+          $encontrePassword=true;
+          header('Location: bienvenida.php');
+          if(empty($errores)){
+          if (!empty($_POST["guardar_clave"])){
+             setcookie("email", $_POST['email'], time() + 365 * 24 * 60 * 60);
+             echo $_COOKIE['email'];
+             setcookie("password", $_POST['password'], time() + 365 * 24 * 60 * 60);
+          }
+          else {
+            if(isset($_COOKIE['email'])){
+              setcookie('email',"");
+            }
+            if(isset($_COOKIE['password'])){
+              setcookie('password',"");
+            }
+          }
+          }
+        }
       }
-
-   }
-
+    }
+    if($encontreUsuario!=true){
+      array_push($errores,'Por Favor verifique el nombre de usuario');
+    }
+    if ($encontrePassword!=true) {
+      array_push($errores,'Contraseña incorrecta');
+    }
+    return $errores;
 }
 
 ?>

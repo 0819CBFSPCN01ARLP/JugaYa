@@ -1,6 +1,11 @@
 <?php
+  session_start();
   if(!isset($_SESSION['usuario'])){
     header("Location: login.php");
+  }
+  elseif ($_SESSION['previoLogueo']==true) {
+    header('Location: noticiasCartas.php');
+    die();
   }
 
  ?>
@@ -18,7 +23,7 @@
   </head>
   <body>
     <div class="jumbotron banner text-center">
-      <h1>Bienvenido!</h1>
+      <h1><?php echo "Bienvenido ".$_SESSION['usuario']."!"; ?></h1>
       <p>Sera redirigido en <span id="countdown">3</span></p>
     </div>
 

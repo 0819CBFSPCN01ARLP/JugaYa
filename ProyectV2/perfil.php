@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  $path="db/usuarios.json";
+  $usuarioJson=file_get_contents($path);
+  $usuarioJSON = json_decode($usuarioJson,true);
+  foreach ($usuarioJSON as $usuario){
+    if($usuario['usuario']==$_SESSION['usuario']){
+      $perfilFoto=$usuario['foto_perfil'];
+    }
+  }
+ ?>
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -22,6 +33,7 @@
         <div class="login-container">
           <ul>
             <li class="pr-2 pl-2"><a href="noticiascartas.php" class="btn btn-success" >Inicio</a></li>
+            <li class="pr-2 pl-2"><a href="perfil.php" class="btn btn-success">Perfil</a></li>
             <li class="pr-2 pl-2"><a href="logout.php" class="btn btn-success">Salir</a></li>
           </ul>
         </div>
@@ -52,7 +64,8 @@
     <!--Columna para la foto y abajo los deportes que practica el usuario -->
       <div class="d-flex flex-column col-md-4">
         <!-- FOTO PERFIL -->
-        <img  class="fotoPerfil" src="img/messi.jpg" alt="">
+        <img  class="fotoPerfil" src="<?php echo "img/".$perfilFoto; ?>" alt="">
+        <h3> <?php echo $_SESSION['usuario']; ?></h3>
         <ul class="ListaDeportesUsuario">
     <!--DEPORTES -->
         <li> <a href="#">Futbol 5</a></li>

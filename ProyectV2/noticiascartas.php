@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  $_SESSION['previoLogueo']=true;
+ ?>
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -21,6 +25,7 @@
         <div class="login-container">
           <ul>
             <li class="pr-2 pl-2"><a href="noticiascartas.php" class="btn btn-success">Inicio</a></li>
+            <li class="pr-2 pl-2"><a href="perfil.php" class="btn btn-success">Perfil</a></li>
             <li class="pr-2 pl-2"><a href="logout.php" class="btn btn-success">Salir</a></li>
           </ul>
         </div>

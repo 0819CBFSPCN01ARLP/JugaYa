@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once('Includes/auth.php');
 $nombre="";
 $apellido="";
@@ -18,7 +19,19 @@ $errores=[];
     if(empty($errores)){
       if (!empty($_POST["guardar_clave"])){
          setcookie("usuario", $usuario, time() + 365 * 24 * 60 * 60);
+         setcookie("email", $email, time() + 365 * 24 * 60 * 60);
          setcookie("password", $password, time() + 365 * 24 * 60 * 60);
+      }
+      else {
+        if(isset($_COOKIE['usuario'])){
+          setcookie('usuario',"");
+        }
+        if(isset($_COOKIE['password'])){
+          setcookie('password',"");
+        }
+        if(isset($_COOKIE['email'])){
+          setcookie('email','');
+        }
       }
     /*  session_start();*/
       $_SESSION['usuario']=$usuario;
@@ -128,7 +141,7 @@ $errores=[];
         </div>
   		</div>
       <input type="file" name="foto_perfil" value="">
-      <label><input type="checkbox" id="cbox1" name="guardar_clave" value="1" > Recordar Usuario</label>
+      <label><input type="checkbox" id="cbox1" name="guardar_clave"> Recordar Usuario</label>
   		<div class="form-group">
         <button type="submit" class="btn btn-success btn-lg btn-block">Registrate</button>
       </div>

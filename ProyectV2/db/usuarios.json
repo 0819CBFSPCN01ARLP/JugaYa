@@ -79,5 +79,32 @@
         "email": "juanadiaz@gmail.com",
         "password": "$2y$10$sjNiSTI3TRI12PmT.R20Me6gJgJpg78Ub0qMHL7wF98.896Tb\/3D2",
         "foto_perfil": "perfilJuanadiaz.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Juan Cruz",
+        "apellido": "Gutierrez",
+        "usuario": "SrManaos98",
+        "email": "juan98@gmail.com",
+        "password": "$2y$10$es\/zWPbsy0JYA1Ibb04wx.KL\/jRK3LDDDdCg78SIH5WorIoQhKRtO",
+        "foto_perfil": "perfilSrManaos98.jpg"
+    },
+    {
+        "id": 10,
+        "name": "kjdfidhf",
+        "apellido": "fidjfidj",
+        "usuario": "ijdgidjgij",
+        "email": "idfnidnfi@gmail.com",
+        "password": "$2y$10$Bts4qeCvXKYd6HJswocI3uY4XB8ZLTHpXYxccWKihdWJQLJy6nVgK",
+        "foto_perfil": "perfilijdgidjgij.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Manaos",
+        "apellido": "Guti",
+        "usuario": "Manaos199876",
+        "email": "juan1998@gmail.com",
+        "password": "$2y$10$DjSrNqjHeeBXj\/Jug0rtyeIiM5mSeBYTLEb4iUtJqnvVYPcfz2kQi",
+        "foto_perfil": "perfilManaos199876.jpg"
     }
 ]
