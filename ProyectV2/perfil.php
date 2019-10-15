@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
   session_start();
+  if(!isset($_SESSION['usuario'])){
+    header("Location: login.php");
+  }
   $path="db/usuarios.json";
   $usuarioJson=file_get_contents($path);
   $usuarioJSON = json_decode($usuarioJson,true);
