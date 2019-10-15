@@ -33,7 +33,6 @@ $errores=[];
           setcookie('email','');
         }
       }
-    /*  session_start();*/
       $_SESSION['usuario']=$usuario;
       $_SESSION['nombre']=$nombre;
       $_SESSION['previoLogueo']=false;
