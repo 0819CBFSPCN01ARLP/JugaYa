@@ -19,7 +19,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>JugaYa- Bienvenido!</title>
-    <link rel="stylesheet" href="bienvenida.css">
+    <link rel="stylesheet" href="css/bienvenida.css">
   </head>
   <body>
     <div class="jumbotron banner text-center">

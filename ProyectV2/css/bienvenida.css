@@ -11,6 +11,6 @@
 }
 body{
   background:#eee;
-  background: url(img/bienvenida.jpg) no-repeat;
+  background: url('../img/bienvenida.jpg') no-repeat;
   background-size: 100%;
 }

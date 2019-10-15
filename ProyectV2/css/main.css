@@ -38,7 +38,7 @@
 /*--- header ---*/
 
 .header {
-	background-image: url('img/sportsBanner.jpg');
+	background-image: url('../img/sportsBanner.jpg');
 	background-size: cover;
 	background-position: center;
 	position: relative;

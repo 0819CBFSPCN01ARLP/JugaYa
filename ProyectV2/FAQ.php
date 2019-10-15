@@ -8,8 +8,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="master.css">
-    <link rel="stylesheet" href="FAQ.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/FAQ.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
   <body>
@@ -17,12 +17,12 @@
     <!-- HEADER -->
     <nav class="navbar navbar-dark bg-dark">
       <div class="container" style="margin-top:0px;">
-        <a class="navbar-brand" href="#"><img src="img/logov2.png" width="100" height="60" class="d-inline-block align-top" alt="logov2"></a>
+        <a class="navbar-brand" href="index.php"><img src="img/logov2.png" width="100" height="60" class="d-inline-block align-top" alt="logov2"></a>
         <div class="login-container">
           <ul>
-            <li class="pr-2 pl-2"><a href="./" >Inicio</a></li>
-            <li class="pr-2 pl-2"><a href="login.html">Entrar</a></li>
-            <li class="pr-2 pl-2"><a href="registro.html" class="btn btn-success">Registrarme</a></li>
+            <li class="pr-2 pl-2"><a href="index.php" >Inicio</a></li>
+            <li class="pr-2 pl-2"><a href="login.php">Entrar</a></li>
+            <li class="pr-2 pl-2"><a href="registro.php" class="btn btn-success">Registrarme</a></li>
           </ul>
         </div>
       </div>
@@ -147,17 +147,17 @@
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4">FAQ</h5>
         <ul class="list-unstyled">
           <li>
-            <a href="FAQ.html#sobreJugaYa">Sobre JugaYa</a>
+            <a href="FAQ.php#sobreJugaYa">Sobre JugaYa</a>
           </li>
           <li>
-            <a href="FAQ.html#crearEvento">¿Como creo un evento?</a>
+            <a href="FAQ.php#crearEvento">¿Como creo un evento?</a>
           </li>
           <li>
-            <a href="FAQ.html#empresa">Perfil de Empresa</a>
+            <a href="FAQ.php#empresa">Perfil de Empresa</a>
           </li>
           <br>
           <li>
-            <a href="FAQ.html">Mas preguntas</a>
+            <a href="FAQ.php">Mas preguntas</a>
           </li>
         </ul>
       </div>
@@ -180,7 +180,7 @@
           </li>
           <br>
           <li>
-            <a href="index.html">Volver a Inicio</a>
+            <a href="index.php">Volver a Inicio</a>
           </li>
         </ul>
       </div>
@@ -193,7 +193,7 @@
   <!-- Call to action -->
   <ul class="list-unstyled list-inline text-center py-2">
     <li class="list-inline-item">
-      <a href="registro.html" class="btn btn-danger btn-rounded">Registrate!</a>
+      <a href="registro.php" class="btn btn-danger btn-rounded">Registrate!</a>
     </li>
   </ul>
   <!-- Call to action -->
@@ -224,7 +224,7 @@
   <!-- Social buttons -->
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2019 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/"> JugaYa.com</a>
+    <a href="index.php"> JugaYa.com</a>
   </div>
   <!-- Copyright -->
 </footer>
