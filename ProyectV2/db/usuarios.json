@@ -106,5 +106,50 @@
         "email": "juan1998@gmail.com",
         "password": "$2y$10$DjSrNqjHeeBXj\/Jug0rtyeIiM5mSeBYTLEb4iUtJqnvVYPcfz2kQi",
         "foto_perfil": "perfilManaos199876.jpg"
+    },
+    {
+        "id": 12,
+        "name": "olas384823",
+        "apellido": "idfjidsjfi",
+        "usuario": "ifdshfisdfj",
+        "email": "juancruz98@gmail.com",
+        "password": "$2y$10$2arLJOlNbAX5rYNpqf1Ps.yKumu2\/MnywfPOFopETdORh9zEJm72O",
+        "foto_perfil": "perfilifdshfisdfj.jpg"
+    },
+    {
+        "id": 13,
+        "name": "jdsbfdskjbgfk",
+        "apellido": "jkfndskjfskd",
+        "usuario": "fkjndskjfndskjnf",
+        "email": "juan9876@gmail.com",
+        "password": "$2y$10$1jbHThi1TbpRkh\/Sntg...07kg5kCIS0MVN\/23SdE0Fei02E2FEZO",
+        "foto_perfil": "perfilfkjndskjfndskjnf.png"
+    },
+    {
+        "id": 14,
+        "name": "jsfdnskjfn",
+        "apellido": "kjfnsdkjfndskjf",
+        "usuario": "rkjnsfkjdsnkjfn",
+        "email": "juanchex98@gmail.com",
+        "password": "$2y$10$rAFxR\/q4MG32mGD5vvRCsuKtP6Uqkc3t8\/vFTTOGHhNMJQALHp14O",
+        "foto_perfil": "perfilrkjnsfkjdsnkjfn.jpg"
+    },
+    {
+        "id": 15,
+        "name": "jfdnskjdfndskjf",
+        "apellido": "fkjdsnfkjsndfkj",
+        "usuario": "fkjndskjfnsdkjfn",
+        "email": "kfndnfd98@gmail.com",
+        "password": "$2y$10$HwRLRSrbwO4NuJnI0bz2A.3yMewNl8ZXruMmViNUTy7\/aB169z9qO",
+        "foto_perfil": "perfilfkjndskjfnsdkjfn.jpg"
+    },
+    {
+        "id": 16,
+        "name": "nskdfgfdjsbg",
+        "apellido": "fkjbndwksjgbfsdjg",
+        "usuario": "fjndkjsgnsdjk",
+        "email": "aijsidsj98@gmail.com",
+        "password": "$2y$10$ntWlVqGK9UCfV5OmqMrU3ea.f7cT5UcAQZxnkWxDxnZWDDJ3gXDaq",
+        "foto_perfil": "perfilfjndkjsgnsdjk.png"
     }
 ]

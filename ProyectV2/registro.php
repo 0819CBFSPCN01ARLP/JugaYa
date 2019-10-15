@@ -36,7 +36,8 @@ $errores=[];
     /*  session_start();*/
       $_SESSION['usuario']=$usuario;
       $_SESSION['nombre']=$nombre;
-      include_once('bienvenida.php');
+      $_SESSION['previoLogueo']=false;
+      header('Location: bienvenida.php');
     }
   }
 
