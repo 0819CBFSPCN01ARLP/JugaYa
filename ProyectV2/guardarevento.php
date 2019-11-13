@@ -20,6 +20,5 @@ $query=$db->prepare("INSERT into eventos
   $query2=$db->prepare("SELECT * from eventos");
   $query2->execute();
   $eventos=$query2->fetchAll(PDO::FETCH_ASSOC);
-var_dump($eventos);
-
+  var_dump($eventos);
   ?>
