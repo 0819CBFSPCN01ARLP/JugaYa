@@ -121,6 +121,15 @@
             </div>
 
             </div>
+   <div class="">
+
+     <a href="nuevoevento.php"> Crear Evento</a>
+     <br>
+     <a href="editarPost.php"> Editar Evento</a>
+     <br>
+     <a href="eliminarPost.php">Eliminar Evento</a>
+   </div>
+
     </div>
     </div>
 </div>

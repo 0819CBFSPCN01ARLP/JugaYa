@@ -7,7 +7,7 @@ include_once('Includes/auth.php');
 $errores=[];
 if (isset($_POST['email'])) {
   $email=$_POST['email'];
-  $errores=verificaLogin($errores);
+  $errores=verificaLogin($errores,$db);
 }
 else {
   $email='';
