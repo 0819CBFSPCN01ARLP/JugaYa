@@ -220,6 +220,9 @@ if(!empty($arregloUsuarios)){
 
 }
 
+
+
+
 function verificaLogin($errores) {
 
 

@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -65,8 +68,8 @@
            <option>Running</option>
            <option>Basquet</option>
          </select>
-        <!--USAMOS UN ENTERTO PARA MARCAR LA UBICACION PORQUE TODAVIA NO ESTAN CRREADAS LAS UBICACIONES Y LA BASE DATOS RECIBE UN INT INDICANDO EL ID DE LA UBICACION-->
-         <label>Elegi la ubicacion:</label>
+
+         <label>Elegi la ubicacion(DEL 1 AL 7):</label><!--USAMOS UN ENTERTO PARA MARCAR LA UBICACION PORQUE TODAVIA NO ESTAN CRREADAS LAS UBICACIONES Y LA BASE DATOS RECIBE UN INT INDICANDO EL ID DE LA UBICACION-->
          <input type="text" name="ubicacion" value="">
       <label> ¿Con cuantos jugadores contas (incluyendote)?</label>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -81,7 +84,7 @@
         </label>
         </div>
            <div class="row justify-content-around">
-            <button type="submit" name="crearEvento">Crear evento</button>
+            <button type="submit" name="">Crear evento</button>
            </div>
 
       </form>
