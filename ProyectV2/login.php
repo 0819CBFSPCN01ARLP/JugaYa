@@ -3,11 +3,12 @@
 session_start();
 include_once('Logueado.php');
 include_once('Includes/auth.php');
+require_once('db/DB.php');
 
 $errores=[];
 if (isset($_POST['email'])) {
   $email=$_POST['email'];
-  $errores=verificaLogin($errores);
+  $errores=verificaLogin($errores,$db);
 }
 else {
   $email='';

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once('Includes/auth.php');
+require_once('db/DB.php');
 $nombre="";
 $apellido="";
 $usuario="";
@@ -15,7 +16,7 @@ $errores=[];
     $usuario=$_POST["usuario"];
     $email=$_POST["email"];
     $password=password_hash($_POST["password"], PASSWORD_DEFAULT);
-    $errores=validacion();
+    $errores=validacion($db);
     if(empty($errores)){
       if (!empty($_POST["guardar_clave"])){
          setcookie("usuario", $usuario, time() + 365 * 24 * 60 * 60);

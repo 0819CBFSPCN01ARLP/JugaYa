@@ -169,23 +169,5 @@
         "email": "junananan98@gmail.com",
         "password": "$2y$10$nLT.OjtjyzCfCjC3k9olnuaxrTSYPJzT8Puf.owC9v0n67gOIDcay",
         "foto_perfil": "perfilfjkdsnkjvndsfkjn.jpg"
-    },
-    {
-        "id": 19,
-        "name": "Matias",
-        "apellido": "Alejandrini",
-        "usuario": "matialejandrini",
-        "email": "matias@hotmail.com",
-        "password": "$2y$10$qdHTEgvS7jcj9C2z\/HmGg.A2KMyHpw\/G3JIb\/lLCU9XkCkfdC1gyW",
-        "foto_perfil": "perfilmatialejandrini.jpg"
-    },
-    {
-        "id": 20,
-        "name": "matias",
-        "apellido": "lopez",
-        "usuario": "matiasalejandrini",
-        "email": "matu@hotmail.com",
-        "password": "$2y$10$.pyUNDHlYs2z6C8cL9Y3i.g\/OZlI3DW1vR2ZTGEeTB7ZXIn3uYEgm",
-        "foto_perfil": "perfilmatiasalejandrini.png"
     }
 ]

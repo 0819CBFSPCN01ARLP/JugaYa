@@ -51,24 +51,40 @@
 
     <div class="container principal col-md-10">
     <div class="d-flex flex-column flex-wrap">
-        <h3>Crea tu evento</h3>
-       <form class="d-flex flex-column" action="guardarevento.php" method="post">
-         <label>Fecha:</label>
+       <form class="d-flex flex-column" action="nuevoevento.php" method="post">
+         <label>Elegi la fecha de tu evento</label>
           <input type="date" name="fecha" min="2019-10-08" step="1">
-          <label>Nombre del evento</label>
-           <input type="text" name="nombre" value="">
          <label>¿Qué deporte es?</label> <!-- ¿¿HACER UN EVENTO CON VARIOS DEPORTES?? -->
-          <select class="form-control" id="exampleFormControlSelect1" name="deporte">
+          <select class="form-control" id="exampleFormControlSelect1">
            <option>Futbol 5</option>
            <option>Fubtol 11</option>
            <option>Tenis</option>
            <option>Running</option>
            <option>Basquet</option>
          </select>
-        <!--USAMOS UN ENTERTO PARA MARCAR LA UBICACION PORQUE TODAVIA NO ESTAN CRREADAS LAS UBICACIONES Y LA BASE DATOS RECIBE UN INT INDICANDO EL ID DE LA UBICACION-->
-         <label>Elegi la ubicacion:</label>
-         <input type="text" name="ubicacion" value="">
-      <label> ¿Con cuantos jugadores contas (incluyendote)?</label>
+        <label> ¿Con cuantos jugadores contas (incluyendote)?</label>
+          <!--<div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="todos">
+            <label class="form-check-label" for="todos_los_jugadores">
+             TODOS
+           </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="todos">
+            <label class="form-check-label" for="todos_los_jugadores">
+             Quiero jugar con mi equipo
+           </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="todos">
+            <label class="form-check-label" for="todos_los_jugadores">
+             Otra.
+           </label>
+           <label class="form-check-label" for="todos_los_jugadores">
+            Indica la cantidad:
+            <input type="text" name="cant_jugadores" value="">
+          </label>
+        </div>  -->
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-success active">
         <input type="radio" name="options" id="option1" autocomplete="off" checked> Todos
