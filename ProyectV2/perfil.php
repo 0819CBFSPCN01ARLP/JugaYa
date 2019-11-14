@@ -4,14 +4,6 @@
   if(!isset($_SESSION['usuario'])){
     header("Location: login.php");
   }
-  $path="db/usuarios.json";
-  $usuarioJson=file_get_contents($path);
-  $usuarioJSON = json_decode($usuarioJson,true);
-  foreach ($usuarioJSON as $usuario){
-    if($usuario['usuario']==$_SESSION['usuario']){
-      $perfilFoto=$usuario['foto_perfil'];
-    }
-  }
  ?>
 <html lang="es" dir="ltr">
   <head>
