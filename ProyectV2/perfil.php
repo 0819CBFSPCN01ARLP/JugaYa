@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <?php
+  include_once('db/DB.php');
   session_start();
   if(!isset($_SESSION['usuario'])){
     header("Location: login.php");
   }
-  $path="db/usuarios.json";
-  $usuarioJson=file_get_contents($path);
-  $usuarioJSON = json_decode($usuarioJson,true);
-  foreach ($usuarioJSON as $usuario){
-    if($usuario['usuario']==$_SESSION['usuario']){
-      $perfilFoto=$usuario['foto_perfil'];
-    }
-  }
+  $usuario=$_SESSION['usuario'];
+  $stmt=$db->prepare("SELECT * FROM jugadores where usuario=:usuario");
+  $stmt->bindValue(':usuario',$usuario);
+  $stmt->execute();
+  $consulta=$stmt->fetch(PDO::FETCH_ASSOC);
  ?>
 <html lang="es" dir="ltr">
   <head>
@@ -67,7 +65,7 @@
     <!--Columna para la foto y abajo los deportes que practica el usuario -->
       <div class="d-flex flex-column col-md-4">
         <!-- FOTO PERFIL -->
-        <img  class="fotoPerfil" src="<?php echo "img/".$perfilFoto; ?>" alt="">
+        <img  class="fotoPerfil" src="<?php echo "img/perfil".$usuario.".".$consulta['extension_foto']; ?>" alt="">
         <h3> <?php echo $_SESSION['usuario']; ?></h3>
         <ul class="ListaDeportesUsuario">
     <!--DEPORTES -->

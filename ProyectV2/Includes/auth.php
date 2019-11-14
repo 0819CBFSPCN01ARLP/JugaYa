@@ -54,7 +54,7 @@ function agregarUsuarios($errores,$db){
   $nombre=$_POST['nombre'];
   $apellido=$_POST['apellido'];
   $contrasenia=password_hash($_POST["password"], PASSWORD_DEFAULT);
-  $stmt=$db->prepare("INSERT into jugadores values (:id,:nombre,:apellido,:usuario,:password,:email,:telefono,:fec_ins,:fec_upd,:ext_foto)");
+  $stmt=$db->prepare("INSERT into jugadores values (:id,:nombre,:apellido,:usuario,:password,:email,:telefono,:ext_foto,:fec_ins,:fec_upd)");
   $date=date("Y-m-d H:i:s");
   $stmt->bindvalue(':id',null);
   $stmt->bindvalue(':nombre',$nombre);
@@ -63,9 +63,9 @@ function agregarUsuarios($errores,$db){
   $stmt->bindValue(':password',$contrasenia);
   $stmt->bindValue(':email',$email);
   $stmt->bindValue(':telefono',"");
+  $stmt->bindValue(':ext_foto',$ext);
   $stmt->bindValue(':fec_ins',$date);
   $stmt->bindValue(':fec_upd',$date);
-  $stmt->bindValue(':ext_foto',NULL);
   $stmt->execute();
   //$consulta=$stmt->fetchAll();
   return $errores;
