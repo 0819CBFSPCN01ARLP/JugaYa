@@ -1,7 +1,11 @@
 
 <?php
 include_once('PDO.php');
-$nombre=$_POST["nombre"];
-$eliminar=$db->prepare("DELETE from eventos where nombre==$nombre");
-$eliminar->execute();
+if(!empty($_POST['nombre'])){
+  $nombre=$_POST["nombre"];
+  $eliminar=$db->prepare("DELETE from eventos where nombre=:nombreEliminar");
+  $eliminar->bindValue(':nombreEliminar',$nombre);
+  $eliminar->execute();
+}
+header('Location: perfil.php');
  ?>
