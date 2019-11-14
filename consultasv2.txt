@@ -7,11 +7,12 @@ CREATE TABLE `jugadores` (
   `nombre` VARCHAR(45) NOT NULL,
   `apellido` VARCHAR(45) NOT NULL,
   `usuario` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
   `fec_ins` DATETIME NOT NULL,
   `fec_upd` DATETIME NOT NULL,
+  `ext_foto` VARCHAR(255),
   PRIMARY KEY (`id`)
   );
   
@@ -20,7 +21,7 @@ CREATE TABLE `jugadores` (
   `nombre` VARCHAR(45) NOT NULL,
   `apellido` VARCHAR(45) NOT NULL,
   `usuario` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
   `titulo` VARCHAR(80) NOT NULL,
@@ -44,7 +45,7 @@ CREATE TABLE `jugadores` (
   `id` INT(10) NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `usuario` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
   `ubicacion_id` INT(10) NOT NULL,
