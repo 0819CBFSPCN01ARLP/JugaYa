@@ -1,0 +1,16 @@
+.banner{
+  background:#6DC560;
+}
+.jumbotron{
+  border-radius: 0px;
+}
+.jumbotron h1{
+  font-family: Helvetica;
+  font-size: 3rem;
+  font-weight: bold;
+}
+body{
+  background:#eee;
+  background: url('../img/bienvenida.jpg') no-repeat;
+  background-size: 100%;
+}

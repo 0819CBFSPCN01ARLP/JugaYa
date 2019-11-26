@@ -1,0 +1,198 @@
+*{
+  list-style:none;
+}
+.navbar{
+  border-radius: 0px;
+}
+
+.listaEvento{
+
+
+}
+nav li {
+  list-style:none;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+nav li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: #FF7A33;
+  text-decoration: none;
+}
+
+.card-body{
+  background-color: rgb(191, 191, 191);
+}
+footer{
+  background-color: #3e4551;
+  margin-top: 100px;
+}
+.principal{
+  background-color: #EEEEEE ;
+
+}
+.noticia{
+height:200px;
+  background-color:white;
+  border: 2px solid grey;
+}
+
+/*NAVEGADOR DE ARRIBA*/
+.navprincipal{
+  background-color: #6DC560;
+  border: 1px solid grey;
+}
+
+/*NAVEGADOR DEL COSTADO*/
+#list-example{
+  background-color:#EEEEEE  ;
+  border: 1px solid grey;
+}
+
+/*ELEMENTOS DEL NAVEGADOR LATERAL*/
+#linksnavlateral{
+  background-color: #EEEEEE ;
+  border: none;
+}
+/*Pagina de Noticias */
+.cartas{
+  margin-top: 0px;
+  margin-bottom: 25px;
+  margin-left: 50px;
+  color: #333333;
+  font-family: Georgia, Serif;
+  font-size: 0.8em;
+  padding:0;
+  width: 15rem;
+  height:20rem;
+
+
+}
+.card-img-top{
+  width: 15rem;
+  height: 12rem;
+  border-right: 1.5px solid #0F152B;
+  border-top:  1.5px solid #0F152B;
+  border-left: 1.5px solid #0F152B;
+}
+.card-body1
+{
+  padding:0;
+  width: 15rem;
+  height: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #6DC560;
+  border-right: 1.5px solid #0F152B;
+  border-bottom: 1.5px solid #0F152B;
+  border-left: 1.5px solid #0F152B;
+  color: #0F152B;
+  text-decoration: none;
+}
+.card-link
+{
+font-size: 1em;
+font-weight: 1000;
+height: 2rem;
+color: #0F152B;
+text-decoration: none;
+
+}
+.categorias{
+width: 1.5rem;
+height: 1.5rem;
+display: inline;
+}
+.contenedorCategorias{
+  text-align: center;
+}
+.fa-trophy{
+  size: x7;
+}
+/*Pagina de Amigos*/
+.item-amigo {
+  width:40rem;
+  height: 10rem;
+}
+.card-img{
+  height:10rem;
+
+}
+.card-body-amigo{
+  height:10rem;
+
+}
+.nombre-usuario-amigo{
+  margin-left: 1rem;
+
+}
+.nombre-apellido-amigo{
+  margin-left: 1rem;
+  font-size: 2rem;
+  font-weight: 1000;
+
+}
+.amigos-en-comun
+{
+  margin-left: 2rem;
+}
+
+/* Pagina de perfil*/
+.containerEstadisticas{
+  border: 1px  solid ##6DC560 ;
+}
+.estadisticasPerfil{
+border-bottom: 1px solid ##6DC560;
+}
+.fotoPerfil{
+  height: 15rem;
+  margin-top: 2rem;
+}
+.ListaDeportesUsuario{
+  margin-top: 3rem;
+  LINE-HEIGHT:2rem;
+}
+.puntuaciones{
+  margin-top:5px;
+}
+#home{
+  background: url(img/85351.jpg)  no-repeat center center fixed;
+  display: table;
+  height: 500px;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+body{
+  background-color: #EEEEEE;
+}
+#banner{
+  background: url(img/soccer.jpg)  no-repeat center center fixed;
+  display: table;
+  height: 500px;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+.landing-text{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.landing-text h1{
+  font-size: 500%;
+  font-weight: 700px;
+}
+.padding{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.card-text{
+  text-align: center;
+}

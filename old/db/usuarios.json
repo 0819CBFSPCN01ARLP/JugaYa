@@ -1,0 +1,191 @@
+[
+    {
+        "id": 0,
+        "name": "bruno",
+        "apellido": "malpeli",
+        "usuario": "bruno",
+        "email": "bruno.malpeli@hotmail.com",
+        "password": "$2y$10$QPU9b5uRBFYdUMIB5PBAUOaP4rEhhB3qq7PoVF6nrPZd9RjQy3276",
+        "foto_perfil": "perfilbruno.jpg"
+    },
+    {
+        "id": 1,
+        "name": "bruno",
+        "apellido": "malpeli",
+        "usuario": "bruno1",
+        "email": "brunomalpeli@hotmail.com",
+        "password": "$2y$10$tKQMYbje\/dMt.2L9zpmDI.5JK88Gqepzk3ehQFw6FJWGobWYvAcpO",
+        "foto_perfil": "perfilbruno1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Martin",
+        "apellido": "Hola",
+        "usuario": "Hola",
+        "email": "hola@gmail.com",
+        "password": "$2y$10$HuWWPQwkU5inUxRbwC69R.O89AAB0AkBOsgFJxu5yiq6ZiImHYrga",
+        "foto_perfil": "perfilHola.jpg"
+    },
+    {
+        "id": 3,
+        "name": "bruno",
+        "apellido": "bruno",
+        "usuario": "bruno1",
+        "email": "bruno.mali@hotmail.com",
+        "password": "$2y$10$XsLAC77aZHnkYt5GBdd40e0cJj0tO5K3fnF3xMRmyIr7w\/U1t7tmO",
+        "foto_perfil": "perfilbruno1.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Bruno",
+        "apellido": "Malpeli",
+        "usuario": "bruno123",
+        "email": "brunomalpeli123@hotmail.com",
+        "password": "$2y$10$4Z24ddG.KvzoKRyhQpFoYOZT6YlzNXhruZplE9nRwXlSalHb\/Jf32",
+        "foto_perfil": "perfilbruno123.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Martin",
+        "apellido": "Hola",
+        "usuario": "martin123",
+        "email": "martin@hotmail.com",
+        "password": "$2y$10$TbI9VwLmmu7QlUObgAZJieitWiQsNpnd5b1etkFxahmOPkxnq69h2",
+        "foto_perfil": "perfilmartin123.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Juan",
+        "apellido": "Gomez",
+        "usuario": "juangomez",
+        "email": "juan@hotmail.com",
+        "password": "$2y$10$YzO88L7DPoXxdfnrU4vEMuKaruqjXom7U.b4bRAFlGTgEtJJgnY.u",
+        "foto_perfil": "perfiljuangomez.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Marianp",
+        "apellido": "Gonzalez",
+        "usuario": "mariangozalez",
+        "email": "mariano@hotmail.com",
+        "password": "$2y$10$.kv8oQIH2RMdnN7ojQ0o6.pFjaLETmNdw.AKSnodEzrmeZ3h\/Wmpq",
+        "foto_perfil": "perfilmariangozalez.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Juana",
+        "apellido": "Diaz",
+        "usuario": "Juanadiaz",
+        "email": "juanadiaz@gmail.com",
+        "password": "$2y$10$sjNiSTI3TRI12PmT.R20Me6gJgJpg78Ub0qMHL7wF98.896Tb\/3D2",
+        "foto_perfil": "perfilJuanadiaz.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Juan Cruz",
+        "apellido": "Gutierrez",
+        "usuario": "SrManaos98",
+        "email": "juan98@gmail.com",
+        "password": "$2y$10$es\/zWPbsy0JYA1Ibb04wx.KL\/jRK3LDDDdCg78SIH5WorIoQhKRtO",
+        "foto_perfil": "perfilSrManaos98.jpg"
+    },
+    {
+        "id": 10,
+        "name": "kjdfidhf",
+        "apellido": "fidjfidj",
+        "usuario": "ijdgidjgij",
+        "email": "idfnidnfi@gmail.com",
+        "password": "$2y$10$Bts4qeCvXKYd6HJswocI3uY4XB8ZLTHpXYxccWKihdWJQLJy6nVgK",
+        "foto_perfil": "perfilijdgidjgij.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Manaos",
+        "apellido": "Guti",
+        "usuario": "Manaos199876",
+        "email": "juan1998@gmail.com",
+        "password": "$2y$10$DjSrNqjHeeBXj\/Jug0rtyeIiM5mSeBYTLEb4iUtJqnvVYPcfz2kQi",
+        "foto_perfil": "perfilManaos199876.jpg"
+    },
+    {
+        "id": 12,
+        "name": "olas384823",
+        "apellido": "idfjidsjfi",
+        "usuario": "ifdshfisdfj",
+        "email": "juancruz98@gmail.com",
+        "password": "$2y$10$2arLJOlNbAX5rYNpqf1Ps.yKumu2\/MnywfPOFopETdORh9zEJm72O",
+        "foto_perfil": "perfilifdshfisdfj.jpg"
+    },
+    {
+        "id": 13,
+        "name": "jdsbfdskjbgfk",
+        "apellido": "jkfndskjfskd",
+        "usuario": "fkjndskjfndskjnf",
+        "email": "juan9876@gmail.com",
+        "password": "$2y$10$1jbHThi1TbpRkh\/Sntg...07kg5kCIS0MVN\/23SdE0Fei02E2FEZO",
+        "foto_perfil": "perfilfkjndskjfndskjnf.png"
+    },
+    {
+        "id": 14,
+        "name": "jsfdnskjfn",
+        "apellido": "kjfnsdkjfndskjf",
+        "usuario": "rkjnsfkjdsnkjfn",
+        "email": "juanchex98@gmail.com",
+        "password": "$2y$10$rAFxR\/q4MG32mGD5vvRCsuKtP6Uqkc3t8\/vFTTOGHhNMJQALHp14O",
+        "foto_perfil": "perfilrkjnsfkjdsnkjfn.jpg"
+    },
+    {
+        "id": 15,
+        "name": "jfdnskjdfndskjf",
+        "apellido": "fkjdsnfkjsndfkj",
+        "usuario": "fkjndskjfnsdkjfn",
+        "email": "kfndnfd98@gmail.com",
+        "password": "$2y$10$HwRLRSrbwO4NuJnI0bz2A.3yMewNl8ZXruMmViNUTy7\/aB169z9qO",
+        "foto_perfil": "perfilfkjndskjfnsdkjfn.jpg"
+    },
+    {
+        "id": 16,
+        "name": "nskdfgfdjsbg",
+        "apellido": "fkjbndwksjgbfsdjg",
+        "usuario": "fjndkjsgnsdjk",
+        "email": "aijsidsj98@gmail.com",
+        "password": "$2y$10$ntWlVqGK9UCfV5OmqMrU3ea.f7cT5UcAQZxnkWxDxnZWDDJ3gXDaq",
+        "foto_perfil": "perfilfjndkjsgnsdjk.png"
+    },
+    {
+        "id": 17,
+        "name": "jdsngkjdsgn",
+        "apellido": "kjfndwkjfndkjskrjfnkj",
+        "usuario": "fjdsnkfjdsnkjfn",
+        "email": "juancruz813898@gmail.com",
+        "password": "$2y$10$IpEXvuJBQIeoeHfHmKE5v.B9hYuZajcf56SBbxYBNmMhE9cbrFcmW",
+        "foto_perfil": "perfilfjdsnkfjdsnkjfn.jpg"
+    },
+    {
+        "id": 18,
+        "name": "fvdfbvdljn",
+        "apellido": "fjndsjndcj",
+        "usuario": "fjkdsnkjvndsfkjn",
+        "email": "junananan98@gmail.com",
+        "password": "$2y$10$nLT.OjtjyzCfCjC3k9olnuaxrTSYPJzT8Puf.owC9v0n67gOIDcay",
+        "foto_perfil": "perfilfjkdsnkjvndsfkjn.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Matias",
+        "apellido": "Alejandrini",
+        "usuario": "matialejandrini",
+        "email": "matias@hotmail.com",
+        "password": "$2y$10$qdHTEgvS7jcj9C2z\/HmGg.A2KMyHpw\/G3JIb\/lLCU9XkCkfdC1gyW",
+        "foto_perfil": "perfilmatialejandrini.jpg"
+    },
+    {
+        "id": 20,
+        "name": "matias",
+        "apellido": "lopez",
+        "usuario": "matiasalejandrini",
+        "email": "matu@hotmail.com",
+        "password": "$2y$10$.pyUNDHlYs2z6C8cL9Y3i.g\/OZlI3DW1vR2ZTGEeTB7ZXIn3uYEgm",
+        "foto_perfil": "perfilmatiasalejandrini.png"
+    }
+]
