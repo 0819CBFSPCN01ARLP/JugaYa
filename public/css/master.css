@@ -196,3 +196,16 @@ body{
 .card-text{
   text-align: center;
 }
+
+.dropdown-item{
+  color: #6DC560;
+}
+.dropdown-item:hover{
+  background-color: none;
+  background: none;
+  color: #6DC560;
+}
+.dropdown-item:focus{
+  background-color: none;
+  text-decoration: none;
+}

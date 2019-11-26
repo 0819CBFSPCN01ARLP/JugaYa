@@ -29,8 +29,8 @@
       <!--Columna para la foto y abajo los deportes que practica el usuario -->
         <div class="d-flex flex-column col-md-4">
           <!-- FOTO PERFIL -->
-          <img  class="fotoPerfil" src="<?php echo "img/perfil".$usuario.".".$consulta['extension_foto']; ?>" alt="">
-          <h3> <?php echo $_SESSION['usuario']; ?></h3>
+
+          <h3> {{ Auth::user()->name}}</h3>
           <ul class="ListaDeportesUsuario">
       <!--DEPORTES -->
           <li> <a href="#">Futbol 5</a></li>

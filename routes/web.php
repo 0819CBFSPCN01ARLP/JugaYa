@@ -28,15 +28,15 @@ Route::get('/home',function(){
 
 Route::get('/inicio',function(){
   return view('inicio');
-});
+})->middleware('auth');
 
 Route::get('/perfil',function(){
   return view('perfil');
-});
+})->middleware('auth');
 
 Route::get('/listaAmigos',function(){
   return view('listaAmigos');
-});
+})->middleware('auth');
 
 Route::get('/listaEventos',function(){
   return view('listaEventos');
