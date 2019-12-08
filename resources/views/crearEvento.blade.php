@@ -5,6 +5,9 @@
 @endsection
 
 @section('section')
+@php
+
+@endphp
   <div class="padding principal">
   <div class="container">
    <div class="d-flex flex-row">
@@ -28,34 +31,23 @@
       <div class="container principal col-md-10">
       <div class="d-flex flex-column flex-wrap">
           <h3>Crea tu evento</h3>
-         <form class="d-flex flex-column" action="guardarevento.php" method="post">
+         <form class="d-flex flex-column" action="/crearEvento" method="post">
+           {{csrf_field()}}
            <label>Fecha:</label>
-            <input type="date" name="fecha" min="2019-10-08" step="1">
+            <input type="date" name="date" min="2019-10-08" step="1">
             <label>Nombre del evento</label>
-             <input type="text" name="nombre" value="">
-           <label>¿Qué deporte es?</label> <!-- ¿¿HACER UN EVENTO CON VARIOS DEPORTES?? -->
-            <select class="form-control" id="exampleFormControlSelect1" name="deporte">
-             <option>Futbol 5</option>
-             <option>Fubtol 11</option>
-             <option>Tenis</option>
-             <option>Running</option>
-             <option>Basquet</option>
+            <input type="text" name="name" value="">
+
+
+           $locations=directory();
+           <label>Elegi la ubicacion:</label>
+           <select class="" name="location_id">
+             <option value="" disabled selected>Seleccione opcion</option>
+             @foreach($locations as $location)
+               <option value= "{{$location->id}}">{{$location->name}}</option>
+             @endforeach
            </select>
 
-           <label>Elegi la ubicacion(DEL 1 AL 7):</label><!--USAMOS UN ENTERTO PARA MARCAR LA UBICACION PORQUE TODAVIA NO ESTAN CRREADAS LAS UBICACIONES Y LA BASE DATOS RECIBE UN INT INDICANDO EL ID DE LA UBICACION-->
-           <input type="text" name="ubicacion" value="">
-        <label> ¿Con cuantos jugadores contas (incluyendote)?</label>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-success active">
-          <input type="radio" name="options" id="option1" autocomplete="off" checked> Todos
-          </label>
-          <label class="btn btn-success">
-          <input type="radio" name="options" id="option2" autocomplete="off"> Un equipo
-          </label>
-          <label class="btn btn-success">
-          <input type="radio" name="options" id="option3" autocomplete="off"> Otra
-          </label>
-          </div>
              <div class="row justify-content-around">
               <button type="submit" name="">Crear evento</button>
              </div>

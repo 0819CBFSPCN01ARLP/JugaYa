@@ -43,5 +43,13 @@ Route::get('/listaEventos',function(){
 });
 
 Route::get('/crearEvento',function(){
-  return view('crearEvento');
+  $locations=\App\location::all();
+  $vac=compact('locations');
+  return  view('crearEvento',$vac);
+});
+
+Route::post('/crearEvento',"eventoController@create");
+
+Route::get('/evento/{id}',function(){
+  return view('evento');
 });

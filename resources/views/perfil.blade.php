@@ -85,11 +85,11 @@
               </div>
      <div class="">
 
-       <a href="nuevoevento.php"> Crear Evento</a>
+       <a href="crearEvento.php"> Crear Evento</a>
        <br>
-       <a href="editarPost.php"> Editar Evento</a>
+       <a href="editarEvento.php"> Editar Evento</a>
        <br>
-       <a href="eliminarPost.php">Eliminar Evento</a>
+       <a href="eliminarEvento.php">Eliminar Evento</a>
      </div>
 
       </div>
