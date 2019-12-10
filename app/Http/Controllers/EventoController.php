@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Evento;
 class EventoController extends Controller
@@ -12,7 +12,7 @@ class EventoController extends Controller
             'name' => $data['name'],
             'date' => $data['date'],
             'location_id' => $data['location_id'],
-            'user_id'=>10,
+            'user_id'=>Auth::id(),  
         ]);
 return redirect('/inicio');
     }
