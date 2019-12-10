@@ -31,7 +31,9 @@ Route::get('/inicio',function(){
 })->middleware('auth');
 
 Route::get('/perfil',function(){
-  return view('perfil');
+  $eventos=\App\Evento::all();
+  $vac=compact('eventos');
+  return view('perfil',$vac);
 })->middleware('auth');
 
 Route::get('/listaAmigos',function(){

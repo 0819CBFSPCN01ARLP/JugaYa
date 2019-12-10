@@ -1,10 +1,14 @@
 @extends('layouts\master_template')
-
+@php
+use Illuminate\Support\Facades\Auth;
+@endphp
 @section('links')
   <link rel="stylesheet" href="css/main.css">
+
 @endsection
 
 @section('section')
+
   <div class="padding principal">
    <div class="container">
     <div class="d-flex flex-row">
@@ -87,9 +91,17 @@
 
        <a href="crearEvento"> Crear Evento</a>
        <br>
-       <a href="editarEvento"> Editar Evento</a>
+       Editar Evento
        <br>
-       <a href="eliminarEvento">Eliminar Evento</a>
+       <select class="" name="evento">
+         <option value="" disabled selected>Elegi un evento</option>
+         @foreach($eventos as $evento)
+            @if ($evento->user_id==Auth::id())
+          <option value= "{{$evento->id}}">{{$evento->name}}</option>
+            @endif
+         @endforeach
+       </select>
+       
      </div>
 
       </div>
