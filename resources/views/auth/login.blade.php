@@ -1,4 +1,4 @@
-@extends('layouts\master_template')
+@extends('layouts\master')
 
 @section('section')
 <div class="container">

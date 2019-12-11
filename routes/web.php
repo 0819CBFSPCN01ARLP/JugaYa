@@ -36,6 +36,12 @@ Route::get('/perfil',function(){
   return view('perfil',$vac);
 })->middleware('auth');
 
+Route::get('/eventos',function(){
+  $eventos=\App\Evento::all();
+  $vac=compact('eventos');
+  return view('evento',$vac);
+});
+
 Route::get('/listaAmigos',function(){
   return view('listaAmigos');
 })->middleware('auth');
@@ -44,13 +50,17 @@ Route::get('/listaEventos',function(){
   return view('listaEventos');
 });
 
-Route::get('/crearEvento',function(){
+Route::get('/eventos',function(){
   $locations=\App\location::all();
   $vac=compact('locations');
-  return  view('crearEvento',$vac);
+  return  view('evento',$vac);
 });
 
-Route::post('/crearEvento',"eventoController@create");
+Route::get('/master',function(){
+  return view('layouts/master');
+});
+
+Route::post('/eventos',"eventoController@create");
 
 Route::get('/evento/{id}',function(){
   return view('evento');
