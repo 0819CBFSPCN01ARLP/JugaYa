@@ -35,6 +35,9 @@ use Illuminate\Support\Facades\Auth;
           <!-- FOTO PERFIL -->
 
           <h3> {{ Auth::user()->name}}</h3>
+
+             <img src="{{Auth::user()->profile_img}}" alt="">
+
           <ul class="ListaDeportesUsuario">
       <!--DEPORTES -->
           <li> <a href="#">Futbol 5</a></li>
@@ -101,7 +104,7 @@ use Illuminate\Support\Facades\Auth;
             @endif
          @endforeach
        </select>
-       
+
      </div>
 
       </div>

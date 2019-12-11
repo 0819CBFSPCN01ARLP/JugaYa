@@ -22,6 +22,10 @@ Route::get('/', 'HomeController@index');
 Route::get('/faq',function(){
   return view('faq');
 });
+Route::get('/master',function(){
+  return view('layouts/master_template');
+});
+
 Route::get('/home',function(){
   return view('home');
 });
