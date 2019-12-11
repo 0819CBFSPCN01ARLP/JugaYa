@@ -86,7 +86,7 @@ class RegisterController extends Controller
        {
            $this->validator($request->all())->validate();
            $data = $request->all();
-           $path=$request->file('profile_img')->store('public\img');
+           $path=$request->file('profile_img')->store('public');
            $data["nombre_archivo"] = basename($path);
            event(new Registered($user = $this->create($data)));
 

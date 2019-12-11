@@ -36,7 +36,7 @@ use Illuminate\Support\Facades\Auth;
 
           <h3> {{ Auth::user()->name}}</h3>
 
-             <img src="{{Auth::user()->profile_img}}" alt="">
+             <img src="/storage/{{Auth::user()->profile_img}}" alt="" height="100px" width="100px">
 
           <ul class="ListaDeportesUsuario">
       <!--DEPORTES -->
