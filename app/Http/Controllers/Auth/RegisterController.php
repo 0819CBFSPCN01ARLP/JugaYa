@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
 class RegisterController extends Controller
 {
     /*
@@ -54,7 +56,8 @@ class RegisterController extends Controller
           'password' => ['required', 'string', 'min:8', 'confirmed'],
           'Last_Name'=> ['required', 'string', 'max:255'],
           'Username'=> ['required', 'string', 'max:255'],
-          'Cellphone'=> ['string', 'max:255']
+          'Cellphone'=> ['string', 'max:255'],
+          'profile_img'=>['image']
       ]);
     }
 
@@ -66,6 +69,7 @@ class RegisterController extends Controller
      */
      protected function create(array $data)
        {
+
            return User::create([
                'name' => $data['name'],
                'last_name' => $data['Last_Name'],
@@ -73,6 +77,22 @@ class RegisterController extends Controller
                'email' => $data['email'],
                'password' => Hash::make($data['password']),
                'cellphone_number' => $data['Cellphone'],
+              'profile_img'=>$data["nombre_archivo"]
+
            ]);
+       }
+
+       public function register(Request $request)
+       {
+           $this->validator($request->all())->validate();
+           $data = $request->all();
+           $path=$request->file('profile_img')->store('public');
+           $data["nombre_archivo"] = basename($path);
+           event(new Registered($user = $this->create($data)));
+
+           $this->guard()->login($user);
+
+           return $this->registered($request, $user)
+                           ?: redirect($this->redirectPath());
        }
 }
