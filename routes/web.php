@@ -69,6 +69,4 @@ Route::get('/evento/{id}',function(){
   return view('evento',$vac);
 });
 
-Route::get('/profile', function(){
-  return view('profile');
-});
+Route::get('/profile/{id}', 'userController@profile');

@@ -1,224 +1,461 @@
-@extends('layouts\master_template')
+@extends('layouts/master')
 @php
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth;
+use App\User;
+$user=User::find(7)
 @endphp
-@section('links')
-  <link rel="stylesheet" href="css/main.css">
-
-@endsection
-
 @section('section')
 
-  <div class="padding principal">
-   <div class="container">
-    <div class="d-flex flex-row">
-       <div id="list-example" class="list-group col-sm-2">
-       <a class="list-group-item list-group-item-action" id="linksnavlateral" href="#list-item-1"><i class="fas fa-futbol"></i>Mis proximos eventos</a>
-       <br>
-       <a class="list-group-item list-group-item-action" id="linksnavlateral" href="#list-item-2"><b>Mis equipos</b></a>
-       <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-3"><i class="fas fa-futbol"></i> Boca</a>
-       <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-4"><i class="fas fa-futbol"></i>Los 5 fantasticos</a>
-       <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-3"><i class="fas fa-running"></i>Runners LP</a>
-       <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-4"><i class="fas fa-table-tennis"></i> Nadal y Roger</a>
-       <br>
-       <br>
-       <a class="list-group-item list-group-item-action" id="linksnavlateral" href="#list-item-2"><b>Explorar</b></a>
-       <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-3"><i class="fas fa-futbol"></i> Eventos cercanos</a>
-       <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-4"><i class="fas fa-user-friends"></i>Jugadores cercanos</a>
-       <a class="list-group-item list-group-item-action " id="linksnavlateral" href="#list-item-3"><i class="fas fa-running"></i>Deportes</a>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-4 col-lg-5">
+      <div class="card text-center">
+        <div class="card-body">
 
-       </div>
+        <img src="/storage/{{$user->profile_img}}" class="rounded-circle avatar-lg img-thumbnail"             alt="profile-image">
 
-      <div class="container principal d-flex flex-row col-md-10">
-      <!--Columna para la foto y abajo los deportes que practica el usuario -->
-        <div class="d-flex flex-column col-md-4">
-          <!-- FOTO PERFIL -->
+         <h4 class="mb-0 mt-2">{{$user->username}}</h4>
+         <p class="text-muted font-14">ROL:JUGADOR/PROFESIONAL</p>
 
-          <h3> {{ Auth::user()->name}}</h3>
+         <button type="button" class="btn btn-success btn-sm mb-2">Follow</button>
+         <button type="button" class="btn btn-danger btn-sm mb-2">Message</button>
 
-             <img src="/storage/{{Auth::user()->profile_img}}" alt="" height="100px" width="100px">
+         <div class="text-left mt-3">
+          <h4 class="font-13 text-uppercase">About Me :</h4>
+          <p class="text-muted font-13 mb-3">DESCRIPCION PERSONAL</p>
+          <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span class="ml-2">{{$user->last_name}}  {{$user->name}} </span></p>
 
-          <ul class="ListaDeportesUsuario">
-      <!--DEPORTES -->
-          <li> <a href="#">Futbol 5</a></li>
-          <li> <a href="#">Futbol 11</a></li>
-          <li> <a href="#">Tenis</a></li>
-          <li> <a href="#">Running</a></li>
-          <li> <a href="#">Paddel</a></li>
-          <li> <a href="#">Fifa PS4</a></li>
-          </ul>
-        </div>
-      <!--Container para el nav con las Pestañas de estadisticas, fotos, etc -->
-      <div class="d-flex container  flex-column">
-        <ul class="nav nav-tabs nav-justified ">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Estaditicas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Fotos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Información personal</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ultimos eventos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Puntuaciones</a>
-          </li>
-          </ul>
-       <!-- Este Container tendria que cambiar de acuerdo a la pestaña seleccionada -->
-            <div class="container containerEstadisticas">
-              <p class="estadisticasPerfil"><b>Partidos jugados:</b> 20</p>
-              <p class="estadisticasPerfil"><b>Partidos ganados:</b> 15</p>
-              <p class="estadisticasPerfil"><b>Partidos empatados:</b> 3</p>
-              <p class="estadisticasPerfil"><b>Partidos perdidos:</b> 2</p>
-              </div>
-       <!-- Container para las puntuaciones -->
-              <div class="container containerEstadisticas puntuaciones d-flex flex-row">
-              <div class="container nivel">
-                <p>Nivel</p>
-                <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-              </div>
-              <div class="container nivel">
-                <p>Compromiso</p>
-                <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-              </div>
-              <div class="container nivel">
-                <p>Respeto</p>
-                <p><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-              </div>
+          <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ml-2">{{$user->cellphone_number}}</span></p>
 
-              </div>
-     <div class="">
+          <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ml-2 ">{{$user->email}}</span></p>
 
-       <a href="crearEvento"> Crear Evento</a>
-       <br>
-       Editar Evento
-       <br>
-       <select class="" name="evento">
-         <option value="" disabled selected>Elegi un evento</option>
-         @foreach($eventos as $evento)
-            @if ($evento->user_id==Auth::id())
-          <option value= "{{$evento->id}}">{{$evento->name}}</option>
-            @endif
-         @endforeach
-       </select>
+          <p class="text-muted mb-1 font-13"><strong>Location :</strong> <span class="ml-2">USA</span></p>
+         </div>
 
-     </div>
+          <ul class="social-list list-inline mt-3 mb-0">
+            <li class="list-inline-item">
+            <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i
+            class="mdi mdi-facebook"></i></a>
+            </li>
+            <li class="list-inline-item">
+            <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i
+            class="mdi mdi-google"></i></a>
+            </li>
+            <li class="list-inline-item">
+            <a href="javascript: void(0);" class="social-list-item border-info text-info"><i
+            class="mdi mdi-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+            <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i
+            class="mdi mdi-github-circle"></i></a>
+            </li>
+            </ul>
+          </div> <!-- end card-body -->
+          </div> <!-- end card -->
 
-      </div>
-      </div>
-  </div>
-  </div>
-  </div>
-  <footer class="page-footer font-small pt-4">
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left">
-    <!-- Grid row -->
-    <div class="row">
-      <!-- Grid column -->
-      <hr class="clearfix w-100 d-md-none">
-      <!-- Grid column -->
-      <div class="col-md-4 mx-auto">
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contacto</h5>
-        <form>
-          <fieldset class="form-group">
-            <input type="email" class="form-control" id="InputEmail1" placeholder="Email">
-          </fieldset>
-          <fieldset class="form-group">
-            <textarea class="form-control" id="Message" placeholder="Mensaje"></textarea>
-          </fieldset>
-          <fieldset class="form-group text-xs-right">
-            <button type="button" class="btn btn-secondary-outline btn-dark">Enviar</button>
-          </fieldset>
-        </form>
-      </div>
-      <!-- Grid column -->
-      <hr class="clearfix w-100 d-md-none">
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">FAQ</h5>
-        <ul class="list-unstyled">
-          <li>
-            <a href="FAQ.php#sobreJugaYa">Sobre JugaYa</a>
-          </li>
-          <li>
-            <a href="FAQ.php#crearEvento">¿Como creo un evento?</a>
-          </li>
-          <li>
-            <a href="FAQ.php#empresa">Perfil de Empresa</a>
-          </li>
-          <br>
-          <li>
-            <a href="FAQ.php">Mas preguntas</a>
-          </li>
-        </ul>
-      </div>
-      <!-- Grid column -->
-      <hr class="clearfix w-100 d-md-none">
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">General</h5>
 
-        <ul class="list-unstyled">
-          <li>
-            <a href="#">Valores</a>
-          </li>
-          <li>
-            <a href="#">Privacidad</a>
-          </li>
-          <li>
-            <a href="#">Desarrolladores</a>
-          </li>
-          <br>
-          <li>
-            <a href="index.php">Volver a Inicio</a>
-          </li>
-        </ul>
-      </div>
-      <!-- Grid column -->
-    </div>
-    <!-- Grid row -->
-  </div>
-  <!-- Footer Links -->
-  <hr>
-  <!-- Call to action -->
 
-  <!-- Call to action -->
+                              </div> <!-- end col-->
 
-  <!-- Social buttons -->
-  <ul class="list-unstyled list-inline text-center">
-    <li class="list-inline-item">
-      <a href="https://www.facebook.com"class="btn-floating btn-fb mx-1">
-        <i class="fab fa-facebook-f"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a href="https://www.twitter.com" class="btn-floating btn-tw mx-1">
-        <i class="fab fa-twitter"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a href="https://www.google.com"class="btn-floating btn-gplus mx-1">
-        <i class="fab fa-google-plus-g"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a href="https://www.Instagram.com"class="btn-floating btn-li mx-1">
-        <i class="fab fa-instagram"> </i>
-      </a>
-    </li>
-  </ul>
-  <!-- Social buttons -->
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2019 Copyright:
-    <a href="index.php"> JugaYa.com</a>
-  </div>
-  <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
+                              <div class="col-xl-8 col-lg-7">
+                                  <div class="card">
+                                      <div class="card-body">
+                                          <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+                                              <li class="nav-item">
+                                                  <a href="pages-profile-2.html#aboutme" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                                                      Estadisticas
+                                                  </a>
+                                              </li>
+                                              <li class="nav-item">
+                                                  <a href="pages-profile-2.html#timeline" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
+                                                      Opiniones
+                                                  </a>
+                                              </li>
+                                              <li class="nav-item">
+                                                  <a href="pages-profile-2.html#settings" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                                                      Settings
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                          <div class="tab-content">
+                                              <div class="tab-pane" id="aboutme">
+
+                                                  <h5 class="text-uppercase"><i class="mdi mdi-briefcase mr-1"></i>
+                                                      Experience</h5>
+
+                                                  <div class="timeline-alt pb-0">
+                                                      <div class="timeline-item">
+                                                          <i class="mdi mdi-circle bg-info-lighten text-info timeline-icon"></i>
+                                                          <div class="timeline-item-info">
+                                                              <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
+                                                              <p class="font-14">websitename.com <span class="ml-2 font-12">Year: 2015 - 18</span></p>
+                                                              <p class="text-muted mt-2 mb-0 pb-3">Everyone realizes why a new common language
+                                                                  would be desirable: one could refuse to pay expensive translators.
+                                                                  To achieve this, it would be necessary to have uniform grammar,
+                                                                  pronunciation and more common words.</p>
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="timeline-item">
+                                                          <i class="mdi mdi-circle bg-primary-lighten text-primary timeline-icon"></i>
+                                                          <div class="timeline-item-info">
+                                                              <h5 class="mt-0 mb-1">Senior Graphic Designer</h5>
+                                                              <p class="font-14">Software Inc. <span class="ml-2 font-12">Year: 2012 - 15</span></p>
+                                                              <p class="text-muted mt-2 mb-0 pb-3">If several languages coalesce, the grammar
+                                                                  of the resulting language is more simple and regular than that of
+                                                                  the individual languages. The new common language will be more
+                                                                  simple and regular than the existing European languages.</p>
+
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="timeline-item">
+                                                          <i class="mdi mdi-circle bg-info-lighten text-info timeline-icon"></i>
+                                                          <div class="timeline-item-info">
+                                                              <h5 class="mt-0 mb-1">Graphic Designer</h5>
+                                                              <p class="font-14">Coderthemes Design LLP <span class="ml-2 font-12">Year: 2010 - 12</span></p>
+                                                              <p class="text-muted mt-2 mb-0 pb-2">The European languages are members of
+                                                                  the same family. Their separate existence is a myth. For science
+                                                                  music sport etc, Europe uses the same vocabulary. The languages
+                                                                  only differ in their grammar their pronunciation.</p>
+                                                          </div>
+                                                      </div>
+
+                                                  </div>
+                                                  <!-- end timeline -->
+
+                                                  <h5 class="mb-3 mt-4 text-uppercase"><i class="mdi mdi-cards-variant mr-1"></i>
+                                                      Projects</h5>
+                                                  <div class="table-responsive">
+                                                      <table class="table table-borderless table-nowrap mb-0">
+                                                          <thead class="thead-light">
+                                                              <tr>
+                                                                  <th>#</th>
+                                                                  <th>Clients</th>
+                                                                  <th>Project Name</th>
+                                                                  <th>Start Date</th>
+                                                                  <th>Due Date</th>
+                                                                  <th>Status</th>
+                                                              </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                              <tr>
+                                                                  <td>1</td>
+                                                                  <td><img src="assets/images/users/avatar-2.jpg" alt="table-user" class="mr-2 rounded-circle" height="24"> Halette Boivin</td>
+                                                                  <td>App design and development</td>
+                                                                  <td>01/01/2015</td>
+                                                                  <td>10/15/2018</td>
+                                                                  <td><span class="badge badge-info-lighten">Work in Progress</span></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>2</td>
+                                                                  <td><img src="assets/images/users/avatar-3.jpg" alt="table-user" class="mr-2 rounded-circle" height="24"> Durandana Jolicoeur</td>
+                                                                  <td>Coffee detail page - Main Page</td>
+                                                                  <td>21/07/2016</td>
+                                                                  <td>12/05/2018</td>
+                                                                  <td><span class="badge badge-danger-lighten">Pending</span></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>3</td>
+                                                                  <td><img src="assets/images/users/avatar-4.jpg" alt="table-user" class="mr-2 rounded-circle" height="24"> Lucas Sabourin</td>
+                                                                  <td>Poster illustation design</td>
+                                                                  <td>18/03/2018</td>
+                                                                  <td>28/09/2018</td>
+                                                                  <td><span class="badge badge-success-lighten">Done</span></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>4</td>
+                                                                  <td><img src="assets/images/users/avatar-6.jpg" alt="table-user" class="mr-2 rounded-circle" height="24"> Donatien Brunelle</td>
+                                                                  <td>Drinking bottle graphics</td>
+                                                                  <td>02/10/2017</td>
+                                                                  <td>07/05/2018</td>
+                                                                  <td><span class="badge badge-info-lighten">Work in Progress</span></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>5</td>
+                                                                  <td><img src="assets/images/users/avatar-5.jpg" alt="table-user" class="mr-2 rounded-circle" height="24"> Karel Auberjo</td>
+                                                                  <td>Landing page design - Home</td>
+                                                                  <td>17/01/2017</td>
+                                                                  <td>25/05/2021</td>
+                                                                  <td><span class="badge badge-warning-lighten">Coming soon</span></td>
+                                                              </tr>
+
+                                                          </tbody>
+                                                      </table>
+                                                  </div>
+
+                                              </div> <!-- end tab-pane -->
+                                              <!-- end about me section content -->
+
+                                              <div class="tab-pane show active" id="timeline">
+
+                                                  <!-- comment box -->
+                                                  <div class="border rounded mt-2 mb-3">
+                                                      <form action="#" class="comment-area-box">
+                                                          <textarea rows="3" class="form-control border-0 resize-none" placeholder="Write something...."></textarea>
+                                                          <div class="p-2 bg-light d-flex justify-content-between align-items-center">
+                                                              <div>
+                                                                  <a href="pages-profile-2.html#" class="btn btn-sm px-2 font-16 btn-light"><i class="mdi mdi-account-circle"></i></a>
+                                                                  <a href="pages-profile-2.html#" class="btn btn-sm px-2 font-16 btn-light"><i class="mdi mdi-map-marker"></i></a>
+                                                                  <a href="pages-profile-2.html#" class="btn btn-sm px-2 font-16 btn-light"><i class="mdi mdi-camera"></i></a>
+                                                                  <a href="pages-profile-2.html#" class="btn btn-sm px-2 font-16 btn-light"><i class="mdi mdi-emoticon-outline"></i></a>
+                                                              </div>
+                                                              <button type="submit" class="btn btn-sm btn-dark waves-effect">Post</button>
+                                                          </div>
+                                                      </form>
+                                                  </div> <!-- end .border-->
+                                                  <!-- end comment box -->
+
+                                                  <!-- Story Box-->
+                                                  <div class="border border-light rounded p-2 mb-3">
+                                                      <div class="media">
+                                                          <img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg"
+                                                              alt="Generic placeholder image" height="32">
+                                                          <div class="media-body">
+                                                              <h5 class="m-0">Jeremy Tomlinson</h5>
+                                                              <p class="text-muted"><small>about 2 minuts ago</small></p>
+                                                          </div>
+                                                      </div>
+                                                      <p>Story based around the idea of time lapse, animation to post soon!</p>
+
+                                                      <img src="assets/images/small/small-1.jpg" alt="post-img" class="rounded mr-1"
+                                                          height="60" />
+                                                      <img src="assets/images/small/small-2.jpg" alt="post-img" class="rounded mr-1"
+                                                          height="60" />
+                                                      <img src="assets/images/small/small-3.jpg" alt="post-img" class="rounded"
+                                                          height="60" />
+
+                                                      <div class="mt-2">
+                                                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                                                  class="mdi mdi-reply"></i> Reply</a>
+                                                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                                                  class="mdi mdi-heart-outline"></i> Like</a>
+                                                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                                                  class="mdi mdi-share-variant"></i> Share</a>
+                                                      </div>
+                                                  </div>
+
+                                                  <!-- Story Box-->
+                                                  <div class="border border-light rounded p-2 mb-3">
+                                                      <div class="media">
+                                                          <img class="mr-2 rounded-circle" src="assets/images/users/avatar-4.jpg"
+                                                              alt="Generic placeholder image" height="32">
+                                                          <div class="media-body">
+                                                              <h5 class="m-0">Thelma Fridley</h5>
+                                                              <p class="text-muted"><small>about 1 hour ago</small></p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="font-16 text-center font-italic text-dark">
+                                                          <i class="mdi mdi-format-quote-open font-20"></i> Cras sit amet nibh libero, in
+                                                          gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                                                          purus odio, vestibulum in vulputate at, tempus viverra turpis. Duis
+                                                          sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper
+                                                          porta. Mauris massa.
+                                                      </div>
+
+                                                      <div class="mx-n2 p-2 mt-3 bg-light">
+                                                          <div class="media">
+                                                              <img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg"
+                                                                  alt="Generic placeholder image" height="32">
+                                                              <div class="media-body">
+                                                                  <h5 class="mt-0">Jeremy Tomlinson <small class="text-muted">3 hours ago</small></h5>
+                                                                  Nice work, makes me think of The Money Pit.
+
+                                                                  <br/>
+                                                                  <a href="javascript: void(0);" class="text-muted font-13 d-inline-block mt-2"><i
+                                                                      class="mdi mdi-reply"></i> Reply</a>
+
+                                                                  <div class="media mt-3">
+                                                                      <a class="pr-2" href="pages-profile-2.html#">
+                                                                          <img src="assets/images/users/avatar-4.jpg" class="rounded-circle"
+                                                                              alt="Generic placeholder image" height="32">
+                                                                      </a>
+                                                                      <div class="media-body">
+                                                                          <h5 class="mt-0">Thelma Fridley <small class="text-muted">5 hours ago</small></h5>
+                                                                          i'm in the middle of a timelapse animation myself! (Very different though.) Awesome stuff.
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+
+                                                          <div class="media mt-2">
+                                                              <a class="pr-2" href="pages-profile-2.html#">
+                                                                  <img src="assets/images/users/avatar-1.jpg" class="rounded-circle"
+                                                                      alt="Generic placeholder image" height="32">
+                                                              </a>
+                                                              <div class="media-body">
+                                                                  <input type="text" id="simpleinput" class="form-control border-0 form-control-sm" placeholder="Add comment">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="mt-2">
+                                                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-danger"><i
+                                                                  class="mdi mdi-heart"></i> Like (28)</a>
+                                                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                                                  class="mdi mdi-share-variant"></i> Share</a>
+                                                      </div>
+                                                  </div>
+
+
+
+                                                  <div class="text-center">
+                                                      <a href="javascript:void(0);" class="text-danger"><i class="mdi mdi-spin mdi-loading mr-1"></i> Load more </a>
+                                                  </div>
+
+                                              </div>
+                                              <!-- end timeline content-->
+
+                                              <div class="tab-pane" id="settings">
+                                                  <form>
+                                                      <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle mr-1"></i> Personal Info</h5>
+                                                      <div class="row">
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="firstname">First Name</label>
+                                                                  <input type="text" class="form-control" id="firstname" placeholder="Enter first name">
+                                                              </div>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="lastname">Last Name</label>
+                                                                  <input type="text" class="form-control" id="lastname" placeholder="Enter last name">
+                                                              </div>
+                                                          </div> <!-- end col -->
+                                                      </div> <!-- end row -->
+
+                                                      <div class="row">
+                                                          <div class="col-12">
+                                                              <div class="form-group">
+                                                                  <label for="userbio">Bio</label>
+                                                                  <textarea class="form-control" id="userbio" rows="4" placeholder="Write something..."></textarea>
+                                                              </div>
+                                                          </div> <!-- end col -->
+                                                      </div> <!-- end row -->
+
+                                                      <div class="row">
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="useremail">Email Address</label>
+                                                                  <input type="email" class="form-control" id="useremail" placeholder="Enter email">
+                                                                  <span class="form-text text-muted"><small>If you want to change email please <a href="javascript: void(0);">click</a> here.</small></span>
+                                                              </div>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="userpassword">Password</label>
+                                                                  <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                                                  <span class="form-text text-muted"><small>If you want to change password please <a href="javascript: void(0);">click</a> here.</small></span>
+                                                              </div>
+                                                          </div> <!-- end col -->
+                                                      </div> <!-- end row -->
+
+                                                      <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-office-building mr-1"></i> Company Info</h5>
+                                                      <div class="row">
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="companyname">Company Name</label>
+                                                                  <input type="text" class="form-control" id="companyname" placeholder="Enter company name">
+                                                              </div>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="cwebsite">Website</label>
+                                                                  <input type="text" class="form-control" id="cwebsite" placeholder="Enter website url">
+                                                              </div>
+                                                          </div> <!-- end col -->
+                                                      </div> <!-- end row -->
+
+                                                      <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-earth mr-1"></i> Social</h5>
+                                                      <div class="row">
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="social-fb">Facebook</label>
+                                                                  <div class="input-group">
+                                                                      <div class="input-group-prepend">
+                                                                          <span class="input-group-text"><i class="mdi mdi-facebook"></i></span>
+                                                                      </div>
+                                                                      <input type="text" class="form-control" id="social-fb" placeholder="Url">
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="social-tw">Twitter</label>
+                                                                  <div class="input-group">
+                                                                      <div class="input-group-prepend">
+                                                                          <span class="input-group-text"><i class="mdi mdi-twitter"></i></span>
+                                                                      </div>
+                                                                      <input type="text" class="form-control" id="social-tw" placeholder="Username">
+                                                                  </div>
+                                                              </div>
+                                                          </div> <!-- end col -->
+                                                      </div> <!-- end row -->
+
+                                                      <div class="row">
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="social-insta">Instagram</label>
+                                                                  <div class="input-group">
+                                                                      <div class="input-group-prepend">
+                                                                          <span class="input-group-text"><i class="mdi mdi-instagram"></i></span>
+                                                                      </div>
+                                                                      <input type="text" class="form-control" id="social-insta" placeholder="Url">
+                                                                  </div>
+                                      </div>
+                                                        </div>
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="social-lin">Linkedin</label>
+                                                                  <div class="input-group">
+                                                                      <div class="input-group-prepend">
+                                                                          <span class="input-group-text"><i class="mdi mdi-linkedin"></i></span>
+                                                                      </div>
+                                                                      <input type="text" class="form-control" id="social-lin" placeholder="Url">
+                                                                  </div>
+                                                              </div>
+                                                          </div> <!-- end col -->
+                                                      </div> <!-- end row -->
+
+                                                      <div class="row">
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="social-sky">Skype</label>
+                                                                  <div class="input-group">
+                                                                      <div class="input-group-prepend">
+                                                                          <span class="input-group-text"><i class="mdi mdi-skype"></i></span>
+                                                                      </div>
+                                                                      <input type="text" class="form-control" id="social-sky" placeholder="@username">
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                  <label for="social-gh">Github</label>
+                                                                  <div class="input-group">
+                                                                      <div class="input-group-prepend">
+                                                                          <span class="input-group-text"><i class="mdi mdi-github-circle"></i></span>
+                                                                      </div>
+                                                                      <input type="text" class="form-control" id="social-gh" placeholder="Username">
+                                                                  </div>
+                                                              </div>
+                                                          </div> <!-- end col -->
+                                                      </div> <!-- end row -->
+
+                                                      <div class="text-right">
+                                                          <button type="submit" class="btn btn-success mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                                                      </div>
+                                                  </form>
+                                              </div>
+                                              <!-- end settings content-->
+
+                                          </div> <!-- end tab-content -->
+                                      </div> <!-- end card body -->
+                                  </div> <!-- end card -->
+                              </div> <!-- end col -->
+                          </div>
+                          <!-- end row-->
+
+                      </div>
+                      <!-- container -->
 @endsection

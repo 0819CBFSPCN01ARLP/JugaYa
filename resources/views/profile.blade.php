@@ -1,14 +1,12 @@
 @extends('layouts/master')
 @section('section')
-@php
-use App\User;
-$user=User::find(7);
-@endphp
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-xl-4 col-lg-5">
       <div class="card text-center">
         <div class="card-body">
+
         <img src="/storage/{{$user->profile_img}}" class="rounded-circle avatar-lg img-thumbnail"             alt="profile-image">
 
          <h4 class="mb-0 mt-2">{{$user->username}}</h4>
