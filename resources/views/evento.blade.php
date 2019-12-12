@@ -15,6 +15,8 @@
                           </a>
                       </li>
                   </ul> <!-- end nav-->
+                 <!-- CHEQUEANDO QUE LLEGEN LOS EVENTOS-->
+
                   <div class="tab-content">
                       <div class="tab-pane show active" id="basic-form-preview">
                           <form enctype="multipart/form-data" action="/eventos" method="post">
@@ -33,7 +35,7 @@
                               <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tipo de Evento</label>
-                                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Deporte">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Ubicación</label>
@@ -83,7 +85,12 @@
               </div> <!-- end card-body-->
             </div>
             <!-- end new post -->
-
+            @foreach ($eventos as $evento)
+              <ul>
+                <li>Nombre:{{$evento->name}}, Usuario:{{$evento->user_id}},
+                Fecha:{{$evento->date}}, Lugar:{{$evento->location_id}}</li>
+              </ul>
+            @endforeach
             <!-- start news feeds -->
             <div class="card">
                 <div class="card-body pb-1">
