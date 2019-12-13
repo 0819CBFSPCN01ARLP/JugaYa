@@ -31,6 +31,7 @@
                                 </span>
                             </a>
                             <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                                 @if(!Auth::user())
                                 <li class="dropdown notification-list topbar-dropdown">
                                     <a class="nav-link dropdown-toggle arrow-none" id="topbar-languagedrop" href="{{ route('login') }}" role="button" aria-haspopup="true" aria-expanded="false">
                                         {{ __('Entrar') }}
@@ -41,12 +42,13 @@
                                         {{ __('Registrarme!') }}
                                     </a>
                                 </li>
+                              @endif
                               @if (Auth::user())
                                 <li class="dropdown notification-list">
                                     <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" id="topbar-userdrop" href="pages-starter.html#" role="button" aria-haspopup="true"
                                         aria-expanded="false">
                                         <span class="account-user-avatar">
-                                            <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                            <img src="/storage/{{Auth::user()->profile_img}}" alt="user-image" class="rounded-circle">
                                         </span>
                                         <span>
                                             <span class="account-user-name">{{Auth::user()->name}} {{Auth::user()->lastname}}</span>
@@ -69,10 +71,14 @@
                                             <i class="mdi mdi-lifebuoy mr-1"></i>
                                             <span>Mis Amigos</span>
                                         </a>
-                                        <a href="{{route('logout')}}" class="dropdown-item notify-item">
-                                            <i class="mdi mdi-lock-outline mr-1"></i>
-                                            <span>Cerrar Sesión</span>
+                                        <a class="dropdown-item notify-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
                                         </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
                                     </div>
                                 </li>
                               @endif

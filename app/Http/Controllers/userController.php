@@ -12,7 +12,7 @@ class userController extends Controller
 
 public function profile($id)
 {
-    $user=User::find($id);
+     $user=User::find($id);
     return view('profile', compact("user"));
 }
 }

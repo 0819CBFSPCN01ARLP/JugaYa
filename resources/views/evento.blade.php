@@ -1,5 +1,7 @@
 @extends('layouts/master')
-
+@php
+  use App\User;
+@endphp
 @section('section')
 
   <div class="container-fluid">
@@ -29,7 +31,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Fecha</label>
-                                    <input type="date" class="form-control" name="date" placeholder="Password">
+                                    <input type="datetime-local" class="form-control" name="date" placeholder="fecha">
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -47,6 +49,11 @@
                                     </select>
                                 </div>
                               </div>
+                            <div class="col-lg-12">
+                              <div class="form-group">
+                                <textarea name="descripcion" rows="8" cols="80" class="form-control" placeholder="Descripcion del evento"></textarea>
+                              </div>
+                            </div>
                             </div>
                             <div class="row">
                               <div class="col-xl-12">
@@ -86,98 +93,53 @@
             </div>
             <!-- end new post -->
             @foreach ($eventos as $evento)
-              <ul>
-                <li>Nombre:{{$evento->name}}, Usuario:{{$evento->user_id}},
-                Fecha:{{$evento->date}}, Lugar:{{$evento->location_id}}</li>
-              </ul>
-            @endforeach
+              @php
+              $creator_id=$evento->user_id;
+              $creator_user=User::find($creator_id);
+              @endphp
+              <div class="card">
+                  <div class="card-body pb-1">
+                      <div class="media">
+                          <img class="mr-2 rounded" src="storage/{{$creator_user["profile_img"]}}" alt="imagen de perfil " height="32">
+                          <div class="media-body">
+                              <div class="dropdown float-right text-muted">
+                                  <a href="apps-social-feed.html#" class="dropdown-toggle arrow-none card-drop"
+                                      data-toggle="dropdown" aria-expanded="false">
+                                      <i class="mdi mdi-dots-horizontal"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                      <!-- item-->
+                                      <a href="javascript:void(0);" class="dropdown-item">Edit</a>
+                                      <!-- item-->
+                                      <a href="javascript:void(0);" class="dropdown-item">Delete</a>
+                                  </div>
+                              </div>
+                              <h5 class="m-0">{{$creator_user["name"] ." ". $creator_user["last_name"]}}</h5>
+                              <p class="text-muted"><small>{{date('d/m/y', strtotime($evento->date))}} <span class="mx-1">⚬</span> <span>Deporte</span></small></p>
+                          </div>
+                      </div>
+
+                      <hr class="m-0" />
+
+                      <div class="font-16 text-center text-dark my-3">
+                          <i class="mdi mdi-format-quote-open font-20"></i>DESCRIPCION
+                      </div>
+
+                      <hr class="m-0" />
+
+                      <div class="my-1">
+                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted pl-0"><i class='mdi mdi-heart text-danger'></i> 2k Likes</a>
+                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i class='uil uil-comments-alt'></i> 200 Comments</a>
+                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i class='uil uil-share-alt'></i> Share</a>
+                      </div>
+
             <!-- start news feeds -->
-            <div class="card">
-                <div class="card-body pb-1">
-                    <div class="media">
-                        <img class="mr-2 rounded" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32">
-                        <div class="media-body">
-                            <div class="dropdown float-right text-muted">
-                                <a href="apps-social-feed.html#" class="dropdown-toggle arrow-none card-drop"
-                                    data-toggle="dropdown" aria-expanded="false">
-                                    <i class="mdi mdi-dots-horizontal"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Edit</a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Delete</a>
-                                </div>
-                            </div>
-                            <h5 class="m-0">Jeremy Tomlinson</h5>
-                            <p class="text-muted"><small>about 2 minuts ago <span class="mx-1">⚬</span> <span>Public</span></small></p>
-                        </div>
-                    </div>
-
-                    <hr class="m-0" />
-
-                    <div class="font-16 text-center text-dark my-3">
-                        <i class="mdi mdi-format-quote-open font-20"></i> Leave one wolf alive and the sheep are never safe. When people ask you
-                        what happened here, tell them the North remembers. Tell them winter came for
-                        House Frey.
-                    </div>
-
-                    <hr class="m-0" />
-
-                    <div class="my-1">
-                        <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted pl-0"><i class='mdi mdi-heart text-danger'></i> 2k Likes</a>
-                        <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i class='uil uil-comments-alt'></i> 200 Comments</a>
-                        <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i class='uil uil-share-alt'></i> Share</a>
-                    </div>
-
-                    <hr class="m-0" />
-
-                    <div class="mt-3">
-                        <div class="media">
-                            <img class="mr-2 rounded" src="assets/images/users/avatar-9.jpg" alt="Generic placeholder image" height="32">
-                            <div class="media-body">
-                                <h5 class="m-0">Sansa Stark </h5>
-                                <p class="text-muted mb-0"><small>2 mins ago</small></p>
-
-                                <p class="my-1">This is awesome! Proud of sis :) Waiting for you to
-                                        come back to winterfall</p>
-
-                                <div>
-                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted p-0">
-                                        <i class='uil uil-heart mr-1'></i> Like
-                                    </a>
-                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted p-0 pl-2">
-                                        <i class='uil uil-comments-alt mr-1'></i> Reply
-                                    </a>
-                                </div>
-
-                                <div class="media mt-3">
-                                    <img class="mr-2 rounded" src="assets/images/users/avatar-8.jpg" alt="Generic placeholder image" height="32">
-                                    <div class="media-body">
-                                        <h5 class="m-0">Cersei Lannister </h5>
-                                        <p class="text-muted mb-0"><small>1 min ago</small></p>
-
-                                        <p class="my-1">I swear! She won't be able to reach to winterfall</p>
-                                    </div> <!-- end media-body -->
-                                </div> <!-- end media-->
-                            </div> <!-- end media-body -->
-                        </div> <!-- end media-->
-
-                        <hr/>
-
-                        <div class="media mb-2">
-                            <img src="assets/images/users/avatar-1.jpg" height="32" class="align-self-start rounded mr-2" alt="Arya Stark" />
-                            <div class="media-body">
-                                <input type="text" class="form-control border-0 form-control-sm" placeholder="Write a comment">
-                            </div> <!-- end medi-body -->
-                        </div> <!-- end media-->
-
-                    </div>
+                              </div>
                 </div> <!-- end card-body -->
+               @endforeach
             </div> <!-- end card -->
             <!-- end news feeds -->
         </div>
     </div> <!--end row -->
-  </div>
 
 @endsection

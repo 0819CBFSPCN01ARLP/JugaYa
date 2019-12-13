@@ -34,12 +34,6 @@ Route::get('/inicio',function(){
   return view('inicio');
 })->middleware('auth');
 
-Route::get('/perfil',function(){
-  $eventos=\App\Evento::all();
-  $vac=compact('eventos');
-  return view('perfil',$vac);
-})->middleware('auth');
-
 
 Route::get('/listaAmigos',function(){
   return view('listaAmigos');
@@ -51,7 +45,7 @@ Route::get('/listaEventos',function(){
 
 Route::get('/eventos',function(){
   $locations=\App\location::all();
-  $eventos=\App\evento::all();
+  $eventos=\App\evento::orderBy('date','asc')->get();
   $vac=compact('locations','eventos');
   return  view('evento',$vac);
 });
@@ -70,3 +64,13 @@ Route::get('/evento/{id}',function(){
 });
 
 Route::get('/profile/{id}', 'userController@profile');
+/*Route::get('/perfil/{id}',function($id){
+  $eventos=\App\Evento::all();
+  $user=\App\User::find($id);
+  $vac=compact('eventos','user');
+  return view('perfil',$vac);
+})->middleware('auth');
+*/
+Route::get('/perfil',function(){
+  return view('perfil');
+});
