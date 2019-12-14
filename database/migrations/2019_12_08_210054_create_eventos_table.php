@@ -20,6 +20,8 @@ class CreateEventosTable extends Migration
             $table->datetime('date');
             $table->integer('user_id');
             $table->integer('location_id');
+            $table->string('descripcion');
+            $table->string('deporte');
 
         });
     }

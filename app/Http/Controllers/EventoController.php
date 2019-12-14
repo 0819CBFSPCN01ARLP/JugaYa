@@ -12,8 +12,10 @@ class EventoController extends Controller
             'name' => $data['name'],
             'date' => $data['date'],
             'location_id' => $data['location_id'],
-            'user_id'=>Auth::id(),  
+            'user_id'=>Auth::id(),
+            'descripcion'=>$data['descripcion'],
+            'deporte'=>$data['deporte'],
         ]);
-return redirect('/inicio');
+return redirect('/eventos');
     }
   }

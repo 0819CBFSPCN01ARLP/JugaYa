@@ -23,15 +23,23 @@
                     <!-- Topbar Start -->
                     <div class="navbar-custom topnav-navbar topnav-navbar-dark">
                         <div class="container-fluid">
-
+                          @if(Auth::user())
                             <!-- LOGO -->
-                            <a href="" class="topnav-logo">
+                            <a href="eventos" class="topnav-logo">
                                 <span class="topnav-logo">
                                     <img src="img/logov2.png" alt="" height="50">
                                 </span>
                             </a>
+                          @else
+                            <!-- LOGO -->
+                            <a href="/" class="topnav-logo">
+                                <span class="topnav-logo">
+                                    <img src="img/logov2.png" alt="" height="50">
+                                </span>
+                            </a>
+                          @endif
                             <ul class="list-unstyled topbar-right-menu float-right mb-0">
-                                 @if(!Auth::user())
+                              @if(!Auth::user())
                                 <li class="dropdown notification-list topbar-dropdown">
                                     <a class="nav-link dropdown-toggle arrow-none" id="topbar-languagedrop" href="{{ route('login') }}" role="button" aria-haspopup="true" aria-expanded="false">
                                         {{ __('Entrar') }}
@@ -48,7 +56,7 @@
                                     <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" id="topbar-userdrop" href="pages-starter.html#" role="button" aria-haspopup="true"
                                         aria-expanded="false">
                                         <span class="account-user-avatar">
-                                            <img src="/storage/{{Auth::user()->profile_img}}" alt="user-image" class="rounded-circle">
+                                            <img src="storage/{{Auth::user()->profile_img}}" alt="user-image" class="rounded-circle">
                                         </span>
                                         <span>
                                             <span class="account-user-name">{{Auth::user()->name}} {{Auth::user()->lastname}}</span>
@@ -108,7 +116,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="text-md-right footer-links d-none d-md-block">
-                                    <a href="javascript: void(0);">Nosotros</a>
+                                    <a href="faq">FAQs</a>
                                     <a href="javascript: void(0);">Contactanos</a>
                                 </div>
                             </div>

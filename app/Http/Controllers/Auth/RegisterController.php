@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/inicio';
+    protected $redirectTo = '/eventos';
 
     /**
      * Create a new controller instance.
@@ -77,7 +77,7 @@ class RegisterController extends Controller
                'email' => $data['email'],
                'password' => Hash::make($data['password']),
                'cellphone_number' => $data['Cellphone'],
-              'profile_img'=>$data["nombre_archivo"]
+               'profile_img'=>$data["nombre_archivo"]
 
            ]);
        }

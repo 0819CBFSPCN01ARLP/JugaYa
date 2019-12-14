@@ -39,29 +39,26 @@ Route::get('/listaAmigos',function(){
   return view('listaAmigos');
 })->middleware('auth');
 
-Route::get('/listaEventos',function(){
-  return view('listaEventos');
-});
 
 Route::get('/eventos',function(){
   $locations=\App\location::all();
   $eventos=\App\evento::orderBy('date','asc')->get();
   $vac=compact('locations','eventos');
   return  view('evento',$vac);
-});
+})->middleware('auth');
 
 Route::get('/master',function(){
   return view('layouts/master');
 });
 
-Route::post('/eventos',"eventoController@create");
+Route::post('/eventos',"EventoController@create");
 
-Route::get('/evento/{id}',function(){
+Route::get('/evento/{id}',function($id){
   $locations=\App\location::all();
-  $eventos=\App\evento::all();
+  $eventos=\App\evento::find('id');
   $vac=compact('locations','eventos');
   return view('evento',$vac);
-});
+})->middleware('auth');
 
 Route::get('/profile/{id}', 'userController@profile');
 /*Route::get('/perfil/{id}',function($id){
@@ -71,6 +68,6 @@ Route::get('/profile/{id}', 'userController@profile');
   return view('perfil',$vac);
 })->middleware('auth');
 */
-Route::get('/perfil',function(){
+Route::get('/perfil/{id}',function($id){
   return view('perfil');
 });
