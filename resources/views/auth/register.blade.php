@@ -80,6 +80,14 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="intereses" class="col-md-4 col-form-label text-md-right">{{ __('Intereses') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea name="intereses" rows="6" cols="80" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="profile_img" class="col-md-4 col-form-label text-md-right">{{ __('Foto de Perfil') }}</label>
 
                             <div class="col-md-6">

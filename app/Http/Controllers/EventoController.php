@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Evento;
+use App\location;
 class EventoController extends Controller
 {
   protected function create(Request $data)
@@ -18,4 +19,41 @@ class EventoController extends Controller
         ]);
 return redirect('/eventos');
     }
+  protected function directory()
+   {
+     $locations=\App\location::all();
+     $eventos=\App\evento::orderBy('date','asc')->get();
+     $vac=compact('locations','eventos');
+     return  view('evento',$vac);
+   }
+   protected function mineDirectory()
+    {
+      $locations=\App\location::all();
+      $eventos=\App\evento::where('user_id',Auth::id())->get();
+      $vac=compact('locations','eventos');
+      return  view('evento',$vac);
+    }
+
+    protected function editar($id)
+     {
+       $locations=\App\location::all();
+       $evento=Evento::find($id);
+       $vac=compact('locations','evento');
+       return  view('editarEvento',$vac);
+     }
+
+     protected function sobrescribir(Request $req,$id)
+      {
+        $locations=\App\location::all();
+        $eventos=\App\evento::orderBy('date','asc')->get();
+        $evento=Evento::find($req["id"]);
+        $evento->descripcion = $req["descripcion"];
+        $evento->name = $req["name"];
+        $evento->date = $req["date"];
+        $evento->deporte = $req["deporte"];
+        $evento->location_id = $req["location_id"];
+        $evento->save();
+        $vac=compact('locations','evento','eventos');
+        return  view('evento',$vac);
+      }
   }

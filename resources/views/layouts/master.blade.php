@@ -6,12 +6,12 @@
       <title>Juga Ya | Torneos y Partidos</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- App favicon -->
-      <link rel="shortcut icon" href="assets/images/favicon.ico">
+      <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
       <!-- App css -->
-      <link href="css/icons.min.css" rel="stylesheet" type="text/css" />
-      <link href="css/app-creative.min.css" rel="stylesheet" type="text/css" id="light-style" />
-      <link href="css/app-creative-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+      <link href="/css/icons.min.css" rel="stylesheet" type="text/css" />
+      <link href="/css/app-creative.min.css" rel="stylesheet" type="text/css" id="light-style" />
+      <link href="/css/app-creative-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
       @yield('links')
     </head>
 
@@ -27,14 +27,14 @@
                             <!-- LOGO -->
                             <a href="eventos" class="topnav-logo">
                                 <span class="topnav-logo">
-                                    <img src="img/logov2.png" alt="" height="50">
+                                    <img src="/img/logov2.png" alt="" height="50">
                                 </span>
                             </a>
                           @else
                             <!-- LOGO -->
                             <a href="/" class="topnav-logo">
                                 <span class="topnav-logo">
-                                    <img src="img/logov2.png" alt="" height="50">
+                                    <img src="/img/logov2.png" alt="" height="50">
                                 </span>
                             </a>
                           @endif
@@ -56,7 +56,7 @@
                                     <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" id="topbar-userdrop" href="pages-starter.html#" role="button" aria-haspopup="true"
                                         aria-expanded="false">
                                         <span class="account-user-avatar">
-                                            <img src="storage/{{Auth::user()->profile_img}}" alt="user-image" class="rounded-circle">
+                                            <img src="/storage/{{Auth::user()->profile_img}}" alt="user-image" class="rounded-circle">
                                         </span>
                                         <span>
                                             <span class="account-user-name">{{Auth::user()->name}} {{Auth::user()->lastname}}</span>
@@ -67,15 +67,15 @@
                                         <div class=" dropdown-header noti-title">
                                             <h6 class="text-overflow m-0">Bienvenido!</h6>
                                         </div>
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <a href="/miProfile" class="dropdown-item notify-item">
                                             <i class="mdi mdi-account-circle mr-1"></i>
-                                            <span>Mis Perfil</span>
+                                            <span>Perfil</span>
                                         </a>
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <a href="/miseventos" class="dropdown-item notify-item">
                                             <i class="mdi mdi-account-edit mr-1"></i>
                                             <span>Mis Eventos</span>
                                         </a>
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <a href="" class="dropdown-item notify-item">
                                             <i class="mdi mdi-lifebuoy mr-1"></i>
                                             <span>Mis Amigos</span>
                                         </a>
@@ -130,8 +130,8 @@
         <!-- END wrapper -->
 
         <!-- bundle -->
-        <script src="js/vendor.min.js"></script>
-        <script src="js/app.min.js"></script>
+        <script src="/js/vendor.min.js"></script>
+        <script src="/js/app.min.js"></script>
 
     </body>
 </html>

@@ -1,6 +1,7 @@
 @extends('layouts/master')
 @php
   use App\User;
+  use App\location;
 @endphp
 @section('section')
 
@@ -74,6 +75,8 @@
               @php
               $creator_id=$evento->user_id;
               $creator_user=User::find($creator_id);
+              $location_id=$evento->location_id;
+              $location_name=location::find($location_id)->name;
               @endphp
               <div class="card">
                   <div class="card-body pb-1">
@@ -86,9 +89,9 @@
                                       ...
                                   </a>
                                   <div class="dropdown-menu dropdown-menu-right">
-                                    @if($evento->user_id == $creator_user["id"])
+                                    @if(Auth::id() == $creator_user["id"])
                                       <!-- item-->
-                                      <a href="evento/{{$evento->id}}" class="dropdown-item">Editar</a>
+                                      <a href="editarEvento/{{$evento->id}}" class="dropdown-item">Editar</a>
                                       <!-- item-->
                                       <a href="javascript:void(0);" class="dropdown-item">Eliminar</a>
                                     @else
@@ -97,8 +100,8 @@
                                     @endif
                                   </div>
                               </div>
-                              <h5 class="m-0">{{$creator_user["name"] ." ". $creator_user["last_name"]}}</h5>
-                              <p class="text-muted"><small>{{date('d/m/y', strtotime($evento->date))}} <span class="mx-1">⚬</span> <span>{{$evento->deporte}}</span></small></p>
+                              <h5 class="m-0"> <a href="/profile/{{$creator_id}}">{{$creator_user["username"]}}</a> </h5>
+                              <p class="text-muted"><small>{{date('d/m/y', strtotime($evento->date))}} <span class="mx-1">⚬</span> <span>{{$evento->deporte}}</span><span class="mx-1">⚬</span><span>{{$location_name}}</span></small></p>
                           </div>
                       </div>
 
@@ -111,9 +114,8 @@
                       <hr class="m-0" />
 
                       <div class="my-1">
-                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted pl-0"><i class='mdi mdi-heart text-danger'></i> 2k Likes</a>
-                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i class='uil uil-comments-alt'></i> 200 Comments</a>
-                          <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i class='uil uil-share-alt'></i> Share</a>
+                          <a href="javascript: void(0);" class="btn btn-sm btn-success">Unirse</a>
+
                       </div>
 
             <!-- start news feeds -->

@@ -57,7 +57,9 @@ class RegisterController extends Controller
           'Last_Name'=> ['required', 'string', 'max:255'],
           'Username'=> ['required', 'string', 'max:255'],
           'Cellphone'=> ['string', 'max:255'],
-          'profile_img'=>['image']
+          'profile_img'=>['image'],
+          'intereses' => ['string']
+
       ]);
     }
 
@@ -77,7 +79,8 @@ class RegisterController extends Controller
                'email' => $data['email'],
                'password' => Hash::make($data['password']),
                'cellphone_number' => $data['Cellphone'],
-               'profile_img'=>$data["nombre_archivo"]
+               'profile_img'=>$data["nombre_archivo"],
+               'intereses'=>$data["intereses"]
 
            ]);
        }

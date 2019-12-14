@@ -1,9 +1,4 @@
 @extends('layouts/master')
-@php
-use App\Http\Controllers\Auth;
-use App\User;
-$user=User::find(7);
-@endphp
 @section('section')
 
 <div class="container-fluid">

@@ -40,34 +40,16 @@ Route::get('/listaAmigos',function(){
 })->middleware('auth');
 
 
-Route::get('/eventos',function(){
-  $locations=\App\location::all();
-  $eventos=\App\evento::orderBy('date','asc')->get();
-  $vac=compact('locations','eventos');
-  return  view('evento',$vac);
-})->middleware('auth');
+Route::get('/eventos','EventoController@directory')->middleware('auth');
+Route::get('/misEventos','EventoController@mineDirectory')->middleware('auth');
+Route::get('/editarEvento/{id}','EventoController@editar')->middleware('auth');
 
 Route::get('/master',function(){
   return view('layouts/master');
 });
 
 Route::post('/eventos',"EventoController@create");
+Route::post('/editarEvento/{id}','EventoController@sobrescribir');
 
-Route::get('/evento/{id}',function($id){
-  $locations=\App\location::all();
-  $eventos=\App\evento::find('id');
-  $vac=compact('locations','eventos');
-  return view('evento',$vac);
-})->middleware('auth');
-
+Route::get('/miProfile', 'userController@miProfile');
 Route::get('/profile/{id}', 'userController@profile');
-/*Route::get('/perfil/{id}',function($id){
-  $eventos=\App\Evento::all();
-  $user=\App\User::find($id);
-  $vac=compact('eventos','user');
-  return view('perfil',$vac);
-})->middleware('auth');
-*/
-Route::get('/perfil/{id}',function($id){
-  return view('perfil');
-});
