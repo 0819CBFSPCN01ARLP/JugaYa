@@ -38,7 +38,11 @@ return redirect('/eventos');
           $user->eventos()->detach($evento_id);
       return redirect('/eventos');
         }
-
+     protected function mostrarEvento($id)
+         {
+           $vac= compact('id');
+           return view('eventoUnico',$vac);
+         }
 
   protected function directory()
    {
@@ -77,7 +81,11 @@ return redirect('/eventos');
         $vac=compact('locations','evento','eventos');
           return redirect('/eventos');
       }
-
+protected function eliminar ($id){
+  $evento=Evento::find($id);
+  $evento->delete();
+  return redirect('/eventos');
+}
 
 
 }

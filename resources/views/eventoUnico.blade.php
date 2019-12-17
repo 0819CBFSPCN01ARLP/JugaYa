@@ -3,6 +3,7 @@
 @php
   use App\User;
   use App\location;
+  use App\Evento;
   use Illuminate\Support\Facades\Auth;
 @endphp
 
@@ -17,66 +18,16 @@
                 <div class="tab-pane show active" id="basic-form-preview">
                   <div class="accordion custom-accordion" id="custom-accordion-one">
                       <div class="card mb-0">
-                          <div class="card-header" id="headingFour">
-                              <h5 class="m-0">
-                                  <a class="custom-accordion-title collapsed d-block py-1" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                      Crear Evento
-                                  </a>
-                              </h5>
-                          </div>
 
-                          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#custom-accordion-one">
-                              <div class="card-body">
-                                <form enctype="multipart/form-data" action="/eventos" method="post">
-                                  {{csrf_field()}}
-                                  <div class="row">
-                                    <div class="col-lg-6">
-                                      <div class="form-group">
-                                          <label for="exampleInputEmail1">Título</label>
-                                          <input type="text" class="form-control" name="name" placeholder="Nombre del Evento ...">
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="exampleInputPassword1">Fecha</label>
-                                          <input type="datetime-local" class="form-control" name="date" placeholder="fecha">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="form-group">
-                                          <label for="exampleInputEmail1">Tipo de Evento</label>
-                                          <input type="text" class="form-control" name="deporte" aria-describedby="emailHelp" placeholder="Deporte">
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="exampleInputPassword1">Ubicación</label>
-                                          <select class="form-control" name="location_id" id="example-select">
-                                            <option value="" disabled selected>Seleccione Ubicación</option>
-                                            @foreach($locations as $location)
-                                              <option value= "{{$location->id}}">{{$location->name}}</option>
-                                            @endforeach
-                                          </select>
-                                      </div>
-                                    </div>
-                                  <div class="col-lg-12">
-                                    <div class="form-group">
-                                      <textarea name="descripcion" rows="5" cols="80" class="form-control" placeholder="Descripcion del evento"></textarea>
-                                    </div>
-                                  </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-xl-12">
-                                      <button type="submit" class="btn btn-primary">Enviar Información de Evento</button>
-                                    </div>
-                                  </div>
-                                </form>
-                              </div>
-                          </div>
+
                       </div>
                   </div>
                 </div> <!-- end preview-->
             </div> <!-- end tab-content-->
 
             <!-- end new post -->
-            @foreach ($eventos as $evento)
               @php
+              $evento=Evento::find($id);
               $creator_id=$evento->user_id;
               $creator_user=User::find($creator_id);
               $location_id=$evento->location_id;
@@ -112,7 +63,7 @@
                                       <a href="eliminarEvento/{{$evento->id}}" class="dropdown-item">Eliminar</a>
                                     @else
                                       <!-- item-->
-                                      <a href="eventoUnico/{{$evento->id}}" class="dropdown-item">Ver Evento</a>
+                                      <a href="/eventoUnico/{id}" class="dropdown-item">Ver Evento</a>
                                     @endif
                                   </div>
                               </div>
@@ -155,7 +106,7 @@
             <!-- start news feeds -->
                               </div>
                 </div> <!-- end card-body -->
-               @endforeach
+
             </div> <!-- end card -->
             <!-- end news feeds -->
         </div>
