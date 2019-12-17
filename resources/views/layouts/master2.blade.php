@@ -17,8 +17,99 @@
     @yield('links')
   </head>
   <body data-layout="topnav">
+    <div class="wrapper">
+        <div class="content-page">
+            <div class="content">
+                <!-- NAVEGADOR -->
+                <!--LOGO PRINCIPAL-->
+                <div class="navbar-custom topnav-navbar topnav-navbar-dark">
+                    <div class="container-fluid">
+                      <a href="eventos" class="topnav-logo">
+                          <span class="topnav-logo">
+                              <img src="/img/logov2.png" alt="" height="50">
+                          </span>
+                      </a>
+                <!--FIN LOGO-->
+                <!--DESPLEGABLE DERECHA-->
+                  <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                 <!--NO LOGUEADO-->
+                    @if(!Auth::user())
+                      <li class="dropdown notification-list topbar-dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" id="topbar-languagedrop" href="{{ route('login') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{ __('Entrar') }}
+                        </a>
+                    </li>
+                    <li class="dropdown notification-list topbar-dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" id="topbar-languagedrop" href="{{ route('register') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{ __('Registrarme!') }}
+                        </a>
+                    </li>
+                  @endif
+                 <!--LOGUEADO-->
+                  @if (Auth::user())
+                    <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" id="topbar-userdrop" href="pages-starter.html#" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <span class="account-user-avatar">
+                                <img src="/storage/{{Auth::user()->profile_img}}" alt="user-image" class="rounded-circle">
+                            </span>
+                            <span>
+                                <span class="account-user-name">{{Auth::user()->name}} {{Auth::user()->lastname}}</span>
+                                <span class="account-position">{{Auth::user()->username}}</span>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown" aria-labelledby="topbar-userdrop">
+                            <div class=" dropdown-header noti-title">
+                                <h6 class="text-overflow m-0">Bienvenido!</h6>
+                            </div>
+                            <a href="/miProfile" class="dropdown-item notify-item">
 
-    <!-- HEADER -->
+                                <span>Perfil</span>
+                            </a>
+                            <a href="/miseventos" class="dropdown-item notify-item">
+                                <span>Mis Eventos</span>
+                            </a>
 
-</body>
+                            <a class="dropdown-item notify-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                  @endif
+                </ul>
+
+                    </div>
+                  </div>
+                  <!-- TERMINA NAVEGADOR-->
+                  @yield('section')
+                  </div>
+                  <!--CONTENIDO-->
+
+
+                  <!--FOOTER-->
+                  <footer class="footer">
+                  <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                             © Juga Ya - jugaya.com
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-right footer-links d-none d-md-block">
+                                <a href="faq">FAQs</a>
+                                <a href="javascript: void(0);">Contactanos</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  </footer>
+
+              </div>
+          </div>
+
+    </body>
 </html>

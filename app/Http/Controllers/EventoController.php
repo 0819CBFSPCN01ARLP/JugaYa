@@ -66,16 +66,16 @@ return redirect('/eventos');
      protected function sobrescribir(Request $req,$id)
       {
         $locations=\App\location::all();
-        $eventos=\App\evento::orderBy('date','asc')->get();
-        $evento=Evento::find($req["id"]);
+        $evento=Evento::find($id);
         $evento->descripcion = $req["descripcion"];
         $evento->name = $req["name"];
         $evento->date = $req["date"];
         $evento->deporte = $req["deporte"];
         $evento->location_id = $req["location_id"];
         $evento->save();
+        $eventos=\App\evento::orderBy('date','asc')->get();
         $vac=compact('locations','evento','eventos');
-        return  view('evento',$vac);
+          return redirect('/eventos');
       }
 
 
