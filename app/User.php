@@ -15,7 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
+    public $fillable = [
         'name', 'email', 'password', 'last_name', 'username','cellphone_number','profile_img', 'intereses'
     ];
 
@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function eventos(){
+      return $this->belongsToMany('App\Evento', 'evento_participante','user_id','evento_id');
+    }
+
 }

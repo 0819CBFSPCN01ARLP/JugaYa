@@ -1,9 +1,13 @@
 @extends('layouts/master')
+@section('section')
 @php
   use App\User;
   use App\location;
+  use Illuminate\Support\Facades\Auth;
 @endphp
-@section('section')
+
+<body>
+
 
   <div class="container-fluid">
     <div class="row justify-content-center mt-3">
@@ -77,7 +81,19 @@
               $creator_user=User::find($creator_id);
               $location_id=$evento->location_id;
               $location_name=location::find($location_id)->name;
+              $participantes=$evento->Users;
+              $pertenece=false;
+              $usuario_logeado_id=Auth::id();
+              if ($usuario_logeado_id==$creator_id) {
+                $pertenece=true;
+              }
+              foreach ($participantes as $participante) {
+              if ($usuario_logeado_id==$participante->id) {
+                 $pertenece=true;
+              }
+              }
               @endphp
+
               <div class="card">
                   <div class="card-body pb-1">
                       <div class="media">
@@ -101,8 +117,10 @@
                                   </div>
                               </div>
                               <h5 class="m-0"> <a href="/profile/{{$creator_id}}">{{$creator_user["username"]}}</a> </h5>
-                              <p class="text-muted"><small>{{date('d/m/y', strtotime($evento->date))}} <span class="mx-1">⚬</span> <span>{{$evento->deporte}}</span><span class="mx-1">⚬</span><span>{{$location_name}}</span></small></p>
+                              <p class="text-muted"><small>{{date('d/m/y', strtotime($evento->date))}} <span class="mx-1">⚬</span> <span>{{$evento->deporte}}</span><span class="mx-1">⚬</span><span>{{$location_name}}</span></span></span></small></p>
                           </div>
+
+
                       </div>
 
                       <hr class="m-0" />
@@ -114,10 +132,26 @@
                       <hr class="m-0" />
 
                       <div class="my-1">
-                          <a href="javascript: void(0);" class="btn btn-sm btn-success">Unirse</a>
+
+                          @if ($pertenece==false)
+                          <a href="/unirParticipante/{{$evento->id}}" class="btn btn-sm btn-success unirse">Unirse</a>   <script src="/js/evento.min.js"></script>
+                        @endif
+                          @if($pertenece==true)
+                          <a href="/sacarParticipante/{{$evento->id}}" class="btn btn-sm btn-danger unirse">Cancelar participación</a>   <script src="/js/evento.min.js"></script>
+                          @endif
+
 
                       </div>
-
+                      <div class="dropdown">
+  <button class="btn btn-sm btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Participantes
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    @foreach ($participantes as $participante)
+    <a class="dropdown-item" href="profile/{{$participante->id}}">{{$participante->username}}</a>
+  @endforeach
+  </div>
+</div>
             <!-- start news feeds -->
                               </div>
                 </div> <!-- end card-body -->
@@ -127,4 +161,6 @@
         </div>
     </div> <!--end row -->
 
+
+</body>
 @endsection

@@ -41,11 +41,15 @@ Route::get('/listaAmigos',function(){
 
 
 Route::get('/eventos','EventoController@directory')->middleware('auth');
-Route::get('/misEventos','EventoController@mineDirectory')->middleware('auth');
+Route::get('/miseventos','EventoController@mineDirectory')->middleware('auth');
 Route::get('/editarEvento/{id}','EventoController@editar')->middleware('auth');
-
+Route::get('/unirParticipante/{id}','EventoController@agregarParticipante')->middleware('auth');
+Route::get('/sacarParticipante/{id}','EventoController@eliminarParticipante')->middleware('auth');
 Route::get('/master',function(){
   return view('layouts/master');
+});
+Route::get('/master2',function(){
+  return view('layouts/master2');
 });
 
 Route::post('/eventos',"EventoController@create");

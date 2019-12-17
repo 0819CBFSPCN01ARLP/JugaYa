@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Evento;
 use App\location;
+use App\evento_participante;
+use App\User;
 class EventoController extends Controller
 {
   protected function create(Request $data)
@@ -19,6 +21,25 @@ class EventoController extends Controller
         ]);
 return redirect('/eventos');
     }
+
+
+    protected function agregarParticipante($evento_id)
+      {
+        $user_id=Auth::id();
+        $user = User::find($user_id);
+        $user->eventos()->attach($evento_id);
+
+    return redirect('/eventos');
+      }
+      protected function eliminarParticipante($evento_id)
+        {
+          $user_id=Auth::id();
+          $user = User::find($user_id);
+          $user->eventos()->detach($evento_id);
+      return redirect('/eventos');
+        }
+
+
   protected function directory()
    {
      $locations=\App\location::all();
@@ -56,4 +77,7 @@ return redirect('/eventos');
         $vac=compact('locations','evento','eventos');
         return  view('evento',$vac);
       }
-  }
+
+
+
+}
