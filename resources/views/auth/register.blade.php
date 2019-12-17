@@ -1,5 +1,7 @@
 @extends('layouts/master')
-
+@section('links')
+  <script src="/js/functionsRegister.js"></script>
+@endsection
 @section('section')
 <div class="container">
     <div class="row justify-content-center mt-2">
@@ -137,4 +139,5 @@
         </div>
     </div>
 </div>
+  <script src="/functionsRegister.js"></script>
 @endsection

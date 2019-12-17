@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
     <link href="/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/app-creative.min.css" rel="stylesheet" type="text/css" id="light-style" />
-    <link href="/css/app-creative-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
     @yield('links')
   </head>
   <body data-layout="topnav">
@@ -82,7 +82,13 @@
                     </li>
                   @endif
                 </ul>
-
+                <div class="app-search">
+                              <form action="/search" method="post">
+                                  <div class="position-relative">
+                                      <input name="busqueda" type="text" class="form-control" placeholder="Buscar Eventos ..">
+                                  </div>
+                              </form>
+                          </div>
                     </div>
                   </div>
                   <!-- TERMINA NAVEGADOR-->

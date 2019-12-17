@@ -12,7 +12,6 @@
   <div class="container-fluid">
     <div class="row justify-content-center mt-3">
         <div class="col-xl-8 col-lg-8">
-           <!-- CHEQUEANDO QUE LLEGEN LOS EVENTOS-->
             <div class="tab-content mb-3">
                 <div class="tab-pane show active" id="basic-form-preview">
                   <div class="accordion custom-accordion" id="custom-accordion-one">
@@ -125,7 +124,7 @@
 
                       <hr class="m-0" />
 
-                      <div class="font-16 text-center text-dark my-3">
+                      <div class="font-16 text-center my-3" style="color:white">
                         {{$evento->descripcion}}
                       </div>
 

@@ -22,9 +22,6 @@ Route::get('/', 'HomeController@index');
 Route::get('/faq',function(){
   return view('faq');
 });
-Route::get('/master',function(){
-  return view('layouts/master_template');
-});
 
 Route::get('/home',function(){
   return view('home');
@@ -34,10 +31,6 @@ Route::get('/inicio',function(){
   return view('inicio');
 })->middleware('auth');
 
-
-Route::get('/listaAmigos',function(){
-  return view('listaAmigos');
-})->middleware('auth');
 
 Route::get('/eventos','EventoController@directory')->middleware('auth');
 Route::get('/miseventos','EventoController@mineDirectory')->middleware('auth');
@@ -52,3 +45,5 @@ Route::post('/editarEvento/{id}','EventoController@sobrescribir');
 
 Route::get('/miProfile', 'userController@miProfile');
 Route::get('/profile/{id}', 'userController@profile');
+
+Route::get('/search/{busqueda}','userController@buscar')->middleware('auth');

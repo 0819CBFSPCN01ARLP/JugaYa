@@ -1,4 +1,4 @@
-@extends('layouts/master_template')
+@extends('layouts/master')
 
 @section('links')
   <link rel="stylesheet" href="css/faq.css">
