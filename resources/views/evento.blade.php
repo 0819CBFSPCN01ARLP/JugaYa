@@ -133,7 +133,7 @@
                       <div class="my-1">
 
                           @if ($pertenece==false)
-                          <a href="/unirParticipante/{{$evento->id}}" class="btn btn-sm btn-success unirse">Unirse</a>   <script src="/js/evento.min.js"></script>
+                          <a href="/unirParticipante/{{$evento->id}}" class="btn btn-sm btn-success unirse">Unirse</a>  
                         @endif
                           @if($pertenece==true)
                           <a href="/sacarParticipante/{{$evento->id}}" class="btn btn-sm btn-danger unirse">Cancelar participación</a>   <script src="/js/evento.min.js"></script>

@@ -45,5 +45,8 @@ Route::post('/editarEvento/{id}','EventoController@sobrescribir');
 
 Route::get('/miProfile', 'userController@miProfile');
 Route::get('/profile/{id}', 'userController@profile');
+Route::get('/followUser/{id}','userController@followUser')->middleware('auth');
+Route::get('/unfollowUser/{id}','userController@unfollowUser')->middleware('auth');
 
-Route::get('/search/{busqueda}','userController@buscar')->middleware('auth');
+
+Route::get('/search','userController@buscar')->middleware('auth');

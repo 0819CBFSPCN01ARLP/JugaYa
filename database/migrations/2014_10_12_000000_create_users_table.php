@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
           $table->string('cellphone_number');
           $table->timestamp('email_verified_at')->nullable();
           $table->string('profile_img')->nullable();
+          $table->softDeletes();
           $table->rememberToken();
           $table->timestamps();
         });

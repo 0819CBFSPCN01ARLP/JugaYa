@@ -83,7 +83,7 @@
                   @endif
                 </ul>
                 <div class="app-search">
-                              <form action="/search" method="post">
+                              <form action="/search" method="get">
                                   <div class="position-relative">
                                       <input name="busqueda" type="text" class="form-control" placeholder="Buscar Eventos ..">
                                   </div>

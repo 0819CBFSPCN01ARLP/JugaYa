@@ -10,7 +10,7 @@
                 <div class="card-header">{{ __('Formulario de Registro') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}">
+                    <form method="POST" enctype="multipart/form-data" onsubmit="return validar()" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="Cellphone" class="col-md-4 col-form-label text-md-right">{{ __('Cellphone') }}</label>
+                            <label for="Cellphone" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
 
                             <div class="col-md-6">
                                 <input id="Cellphone" type="text" class="form-control @error('Cellphone') is-invalid @enderror" name="Cellphone" value="{{ old('Cellphone') }}" required autocomplete="Cellphone" autofocus>
