@@ -58,7 +58,7 @@ class RegisterController extends Controller
           'Username'=> ['required', 'string', 'max:255'],
           'Cellphone'=> ['string', 'max:255'],
           'profile_img'=>['image'],
-          'intereses' => ['string']
+          'intereses' => ['required']
 
       ]);
     }

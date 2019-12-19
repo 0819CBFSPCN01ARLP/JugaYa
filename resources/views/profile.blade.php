@@ -27,13 +27,15 @@ use Illuminate\Support\Facades\Auth;
                     }
 
                    @endphp
-                   @if(!$loSigue)
-                  <a href="/followUser/{{$user->id}}" class="btn btn-sm btn-success unirse">Seguir</a>
-                    @endif
-                 @if($loSigue)
-                <a href="#" class="btn btn-sm btn-succes unirse">Seguido</a>
-                <a href="/unfollowUser/{{$user->id}}" class="btn btn-sm btn-danger unirse">Dejar de seguir</a>
-                 @endif
+@if ($user->id!=Auth::id())
+  @if(!$loSigue)
+ <a href="/followUser/{{$user->id}}" class="btn btn-sm btn-success unirse">Seguir</a>
+   @endif
+@if($loSigue)
+<a href="#" class="btn btn-sm btn-succes unirse">Seguido</a>
+<a href="/unfollowUser/{{$user->id}}" class="btn btn-sm btn-danger unirse">Dejar de seguir</a>
+@endif
+@endif
 
 
          <div class="text-left mt-3">

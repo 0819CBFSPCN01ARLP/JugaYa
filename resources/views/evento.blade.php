@@ -116,7 +116,7 @@
                                   </div>
                               </div>
                               <h5 class="m-0" style="color:#0F2D67"> <a style="color:#0F2D67" href="/profile/{{$creator_id}}">{{$creator_user["username"]}}</a> </h5>
-                              <p style="color:#0F2D67"><small style="color:#0F2D67">{{date('d/m/y', strtotime($evento->date))}} <span class="mx-1">⚬</span> <span>{{$evento->deporte}}</span><span class="mx-1">⚬</span><span>{{$location_name}}</span></span></span></small></p>
+                              <p style="color:#0F2D67"><small style="color:#0F2D67">{{date('d/m/y H:i', strtotime($evento->date))}} <span class="mx-1">⚬</span> <span>{{$evento->deporte}}</span><span class="mx-1">⚬</span><span>{{$location_name}}</span></span></span></small></p>
                           </div>
 
 
