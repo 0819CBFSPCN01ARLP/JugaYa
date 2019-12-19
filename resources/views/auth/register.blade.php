@@ -14,7 +14,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
+                            <label  for="name" class="col-md-4 col-form-label text-md-right" style="color:#0F2D67">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="Last_Name" class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
+                            <label for="Last_Name" class="col-md-4 col-form-label text-md-right" style="color:#0F2D67">{{ __('Apellido') }}</label>
 
                             <div class="col-md-6">
                                 <input id="Last_Name" type="text" class="form-control @error('Last_Name') is-invalid @enderror" name="Last_Name" value="{{ old('Last_Name') }}" required autocomplete="Last_Name" autofocus>
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="Username" class="col-md-4 col-form-label text-md-right">{{ __('Nombre de Usuario') }}</label>
+                            <label for="Username" class="col-md-4 col-form-label text-md-right" style="color:#0F2D67" >{{ __('Nombre de Usuario') }}</label>
 
                             <div class="col-md-6">
                                 <input id="Username" type="text" class="form-control @error('Username') is-invalid @enderror" name="Username" value="{{ old('Username') }}" required autocomplete="Username" autofocus>
@@ -56,7 +56,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo Electrónico') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right" style="color:#0F2D67">{{ __('Correo Electrónico') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="Cellphone" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
+                            <label for="Cellphone" class="col-md-4 col-form-label text-md-right" style="color:#0F2D67">{{ __('Celular')}}</label>
 
                             <div class="col-md-6">
                                 <input id="Cellphone" type="text" class="form-control @error('Cellphone') is-invalid @enderror" name="Cellphone" value="{{ old('Cellphone') }}" required autocomplete="Cellphone" autofocus>
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="intereses" class="col-md-4 col-form-label text-md-right">{{ __('Intereses') }}</label>
+                            <label for="intereses" class="col-md-4 col-form-label text-md-right" style="color:#0F2D67">{{ __('Intereses')  }}</label>
 
                             <div class="col-md-6">
                                 <textarea name="intereses" rows="6" cols="80" class="form-control"></textarea>
@@ -90,7 +90,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="profile_img" class="col-md-4 col-form-label text-md-right">{{ __('Foto de Perfil') }}</label>
+                            <label for="profile_img" class="col-md-4 col-form-label text-md-right" style="color:#0F2D67">{{ __('Foto de Perfil')  }}</label>
 
                             <div class="col-md-6">
                                 <input id="profile_img" type="file" class="form-control @error('profile_img') is-invalid @enderror" name="profile_img" value="{{ old('profile_img') }}" required autocomplete="profile_img" autofocus>
@@ -105,7 +105,7 @@
 
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right" style="color:#0F2D67">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -119,7 +119,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar Contraseña') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right" style="color:#0F2D67">{{ __('Confirmar Contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">

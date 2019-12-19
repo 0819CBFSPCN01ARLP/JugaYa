@@ -18,7 +18,7 @@
                       <div class="card mb-0">
                           <div class="card-header" id="headingFour">
                               <h5 class="m-0">
-                                  <a class="custom-accordion-title collapsed d-block py-1" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                  <a style="color:#0F2D67" class="custom-accordion-title collapsed d-block py-1" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                       Crear Evento
                                   </a>
                               </h5>
@@ -31,21 +31,21 @@
                                   <div class="row">
                                     <div class="col-lg-6">
                                       <div class="form-group">
-                                          <label for="exampleInputEmail1">Título</label>
+                                          <label style="color:#0F2D67" for="exampleInputEmail1">Título</label>
                                           <input type="text" class="form-control" name="name" placeholder="Nombre del Evento ...">
                                       </div>
                                       <div class="form-group">
-                                          <label for="exampleInputPassword1">Fecha</label>
+                                          <label style="color:#0F2D67" for="exampleInputPassword1">Fecha</label>
                                           <input type="datetime-local" class="form-control" name="date" placeholder="fecha">
                                       </div>
                                     </div>
                                     <div class="col-lg-6">
                                       <div class="form-group">
-                                          <label for="exampleInputEmail1">Tipo de Evento</label>
+                                          <label style="color:#0F2D67" for="exampleInputEmail1">Tipo de Evento</label>
                                           <input type="text" class="form-control" name="deporte" aria-describedby="emailHelp" placeholder="Deporte">
                                       </div>
                                       <div class="form-group">
-                                          <label for="exampleInputPassword1">Ubicación</label>
+                                          <label style="color:#0F2D67" for="exampleInputPassword1">Ubicación</label>
                                           <select class="form-control" name="location_id" id="example-select">
                                             <option value="" disabled selected>Seleccione Ubicación</option>
                                             @foreach($locations as $location)
@@ -62,7 +62,7 @@
                                   </div>
                                   <div class="row">
                                     <div class="col-xl-12">
-                                      <button type="submit" class="btn btn-primary">Enviar Información de Evento</button>
+                                      <button type="submit" class="btn btn-success">Crear evento</button>
                                     </div>
                                   </div>
                                 </form>
@@ -115,8 +115,8 @@
                                     @endif
                                   </div>
                               </div>
-                              <h5 class="m-0"> <a href="/profile/{{$creator_id}}">{{$creator_user["username"]}}</a> </h5>
-                              <p class="text-muted"><small>{{date('d/m/y', strtotime($evento->date))}} <span class="mx-1">⚬</span> <span>{{$evento->deporte}}</span><span class="mx-1">⚬</span><span>{{$location_name}}</span></span></span></small></p>
+                              <h5 class="m-0" style="color:#0F2D67"> <a style="color:#0F2D67" href="/profile/{{$creator_id}}">{{$creator_user["username"]}}</a> </h5>
+                              <p style="color:#0F2D67"><small style="color:#0F2D67">{{date('d/m/y', strtotime($evento->date))}} <span class="mx-1">⚬</span> <span>{{$evento->deporte}}</span><span class="mx-1">⚬</span><span>{{$location_name}}</span></span></span></small></p>
                           </div>
 
 
@@ -133,7 +133,7 @@
                       <div class="my-1">
 
                           @if ($pertenece==false)
-                          <a href="/unirParticipante/{{$evento->id}}" class="btn btn-sm btn-success unirse">Unirse</a>  
+                          <a href="/unirParticipante/{{$evento->id}}" class="btn btn-sm btn-success unirse">Unirse</a>
                         @endif
                           @if($pertenece==true)
                           <a href="/sacarParticipante/{{$evento->id}}" class="btn btn-sm btn-danger unirse">Cancelar participación</a>   <script src="/js/evento.min.js"></script>
